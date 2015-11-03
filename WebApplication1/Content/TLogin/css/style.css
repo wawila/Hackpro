@@ -49,6 +49,14 @@ input {
   padding: 3rem 0;
 }
 
+#lg
+{
+    width : 100%;
+    position: relative;
+    background-color: none;
+    border-radius: 5%;
+}
+
 .form input[type="password"], .form input[type="text"], .form input[type="submit"] {
   width: 100%;
 }

@@ -28,9 +28,14 @@ namespace System.Windows.Forms
 
                 if (li.IniciarSesion(usuario, clave))
                     return RedirectToAction("Index", "Dashboard");
+               
                 else
+                    return RedirectToAction("ErrorLoging", "LogIn");
+            }
 
-                return RedirectToAction("LogIn");
+            public ActionResult ErrorLoging()
+            {
+                return View("ErrorLoging");
             }
         }
     }
