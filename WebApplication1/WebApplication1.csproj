@@ -89,6 +89,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Login\bienvenido.html" />
+    <Content Include="Content\Login\css\style.css" />
+    <Content Include="Content\Login\images\background.jpg" />
+    <Content Include="Content\Login\images\logoUNITEC.png" />
+    <Content Include="Content\Login\js\login.js" />
+    <Content Include="Content\Login\login.html" />
     <Content Include="Content\TDashboard\assets\css\font-awesome.min.css" />
     <Content Include="Content\TDashboard\assets\css\ie8.css" />
     <Content Include="Content\TDashboard\assets\css\ie9.css" />
@@ -141,6 +147,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\LogIn\ErrorLoging.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

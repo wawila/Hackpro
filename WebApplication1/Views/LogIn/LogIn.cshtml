@@ -1,34 +1,33 @@
-﻿
+﻿@model WebApplication1.Models.LoginModel
 @{
-    ViewBag.Title = "#HackPro Log In";
+    Layout = null;
+    ViewBag.Title = "#HackPro";
 }
 
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
+    <title>Login</title>
     <link href="~/Content/TLogin/css/style.css" rel="stylesheet" />
 </head>
 <body class="align">
         <div class="site__container">
             <div class="grid__container">
-                <form action="" method="post" class="form form--login"> 
+                <form action="" method="post" class="form form--login">
                     <div class="form__field">
-                        <!-- User --> 
                         <label class="fontawesome-user" for="login__username"><span class="hidden">Username</span></label>
-                        <input id="login__username" type="text" class="form__input" placeholder="USUARIO" required>
+                        <input name="User" id="login__username" type="text" class="form__input" placeholder="Username" required>
                     </div>
                     <div class="form__field">
-                        <!-- Password --> 
                         <label class="fontawesome-lock" for="login__password"><span class="hidden">Password</span></label>
-                        <input id="login__password" type="password" class="form__input" placeholder="CONTRASEÑA" required>
+                        <input name="Password" id="login__password" type="password" class="form__input" placeholder="Password" required>
                     </div>
                     <div class="form__field">
-                        <!-- Boton --> 
-                        <input type="submit" value="Ingresar" id="IniciarSesion" onclick="">
+                        <input type="submit" value="Iniciar Sesion">
                     </div>
                 </form>
-                <p class="text--center">No tienes usuario? <a href="~/Views/Dashboard/Dashboard.cshtml">Registrate Ya!</a> <span class="fontawesome-arrow-right"></span></p>
+                <p class="text--center">Not a member? <a href="#">Sign up now</a> <span class="fontawesome-arrow-right"></span></p>
             </div>
         </div>
 </body>

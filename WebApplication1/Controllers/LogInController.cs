@@ -4,28 +4,34 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication1.Actions;
+using WebApplication1.Models;
 
 
-namespace WebApplication1.Controllers
+namespace System.Windows.Forms
 {
-    public class LogInController : Controller
+    namespace WebApplication1.Controllers
     {
-        // GET: LogIn
-        public ActionResult Index()
+        public class LogInController : Controller
         {
-            return View("LogIn");
-        }
+            // GET: LogIn
+            [HttpGet]
+            public ActionResult LogIn()
+            {
+                return View("LogIn");
+            }
+            [HttpPost]
+            public RedirectToRouteResult LogIn(LoginModel log)
+            {
+                Sesion li = new Sesion();
+                string usuario = log.User;
+                string clave = log.Password;
 
-        public ActionResult LogIn()
-        {
-            Sesion li = new Sesion();
-            String usuario = "";
-            String clave = "";
-            
-            if (li.IniciarSesion(usuario, clave))
-                return View("Dashboard");
+                if (li.IniciarSesion(usuario, clave))
+                    return RedirectToAction("Index", "Dashboard");
+                else
 
-            return View("LogIn");
+                return RedirectToAction("LogIn");
+            }
         }
     }
 }
