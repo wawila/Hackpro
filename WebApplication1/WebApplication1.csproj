@@ -135,6 +135,26 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\TFormulario\css\default.css" />
+    <Content Include="Content\TFormulario\img\bg_infobox.gif" />
+    <Content Include="Content\TFormulario\img\h1.png" />
+    <Content Include="Content\TFormulario\img\overlay.png" />
+    <Content Include="Content\TFormulario\index.html" />
+    <Content Include="Content\TFormulario\screenshot.jpg" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\css\animate-custom.css" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\css\demo.css" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\css\fonts\BebasNeue-webfont.svg" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\css\fonts\Dharma Type Font License.txt" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\css\fonts\fontomas-webfont.svg" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\css\fonts\franchise-bold-webfont.svg" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\css\style.css" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\css\style2.css" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\css\style3.css" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\images\bg.jpg" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\images\ImageAttribution.txt" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\index.html" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\index2.html" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\index3.html" />
     <Content Include="Content\TLogin\css\style.css" />
     <Content Include="Content\TLogin\index.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -143,6 +163,15 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\TLogin\config.rb" />
     <Content Include="Content\TLogin\scss\style.scss" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\css\fonts\BebasNeue-webfont.eot" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\css\fonts\BebasNeue-webfont.ttf" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\css\fonts\BebasNeue-webfont.woff" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\css\fonts\fontomas-webfont.eot" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\css\fonts\fontomas-webfont.ttf" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\css\fonts\fontomas-webfont.woff" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\css\fonts\franchise-bold-webfont.eot" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\css\fonts\franchise-bold-webfont.ttf" />
+    <Content Include="Content\TLogIn2\LoginRegistrationForm\css\fonts\franchise-bold-webfont.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -158,7 +187,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +220,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Dashboard\Dashboard.cshtml" />
+    <Content Include="Views\LogIn\LogIn - Copy.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
