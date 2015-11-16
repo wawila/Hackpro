@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hackprodb_4Model.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_calificacion">
+    <Key>
+      <PropertyRef Name="tbl_evento" />
+      <PropertyRef Name="tbl_proyecto" />
+    </Key>
+    <Property Name="tbl_evento" Type="int" Nullable="false" />
+    <Property Name="tbl_proyecto" Type="int" Nullable="false" />
+    <Property Name="tbl_calificacion_jurado" Type="int" />
+    <Property Name="tbl_calificacion_pueblo" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_cat_evento">
+    <Key>
+      <PropertyRef Name="tbl_cat_evento_id" />
+    </Key>
+    <Property Name="tbl_cat_evento_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tbl_cat_evento_desc" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="tbl_cat_evento_activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_comentario_evento">
+    <Key>
+      <PropertyRef Name="tbl_comentario_evento_id" />
+    </Key>
+    <Property Name="tbl_comentario_evento_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tbl_usuario_id" Type="int" Nullable="false" />
+    <Property Name="tbl_evento_id" Type="int" Nullable="false" />
+    <Property Name="tbl_comentario_evento_fecha" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="tbl_comentario_evento_like" Type="bit" />
+    <Property Name="tbl_comentario_evento_comentario" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_comentario_proyecto">
+    <Key>
+      <PropertyRef Name="tbl_comentario_proyecto_id" />
+    </Key>
+    <Property Name="tbl_comentario_proyecto_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tbl_usuario_id" Type="int" Nullable="false" />
+    <Property Name="tbl_proyecto_id" Type="int" Nullable="false" />
+    <Property Name="tbl_comentario_proyecto_fecha" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="tbl_comentario_proyecto_comentario" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="tbl_comentario_proyecto_like" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_equipo">
+    <Key>
+      <PropertyRef Name="tbl_equipo_id" />
+    </Key>
+    <Property Name="tbl_equipo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tbl_equipo_nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="tbl_equipo_fecha_creacion" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="tbl_equipo_activo" Type="bit" Nullable="false" />
+    <Property Name="tbl_equipo_usuario_admin" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_equipo_evento">
+    <Key>
+      <PropertyRef Name="tbl_equipo_id" />
+      <PropertyRef Name="tbl_evento_id" />
+    </Key>
+    <Property Name="tbl_equipo_id" Type="int" Nullable="false" />
+    <Property Name="tbl_evento_id" Type="int" Nullable="false" />
+    <Property Name="tbl_equipo_evento_fecha_crea" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="tbl_equipo_evento_activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_equipo_usuario">
+    <Key>
+      <PropertyRef Name="tbl_equipo_id" />
+      <PropertyRef Name="tbl_usaurio_id" />
+    </Key>
+    <Property Name="tbl_equipo_id" Type="int" Nullable="false" />
+    <Property Name="tbl_usaurio_id" Type="int" Nullable="false" />
+    <Property Name="tbl_equipo_usuario_activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_evento">
+    <Key>
+      <PropertyRef Name="tbl_evento_id" />
+    </Key>
+    <Property Name="tbl_evento_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tbl_evento_nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="tbl_evento_desc" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="tbl_evento_lugar" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="tbl_evento_lugar_x" Type="int" Nullable="false" />
+    <Property Name="tbl_evento_lugar_y" Type="int" Nullable="false" />
+    <Property Name="tbl_evento_activo" Type="bit" Nullable="false" />
+    <Property Name="tbl_evento_duracion" Type="int" Nullable="false" />
+    <Property Name="tbl_evento_fecha_inicio" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="tbl_evento_fecha_fin" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="tbl_usuario_id" Type="int" Nullable="false" />
+    <Property Name="tbl_cat_evento_id" Type="int" Nullable="false" />
+    <Property Name="tbl_evento_presupuesto" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="tbl_evento_url" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="tbl_evento_cal_jurado" Type="bit" Nullable="false" />
+    <Property Name="tbl_evento_cal_pueblo" Type="bit" Nullable="false" />
+    <Property Name="tbl_evento_precio" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_jurado">
+    <Key>
+      <PropertyRef Name="tbl_jurado_id" />
+      <PropertyRef Name="tbl_evento_id" />
+    </Key>
+    <Property Name="tbl_jurado_id" Type="int" Nullable="false" />
+    <Property Name="tbl_evento_id" Type="int" Nullable="false" />
+    <Property Name="tbl_jurado_activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_patrocinio">
+    <Key>
+      <PropertyRef Name="tbl_patrocinio_id" />
+    </Key>
+    <Property Name="tbl_patrocinio_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tbl_patrocinio_nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="tbl_patrocinio_correo" Type="varchar" MaxLength="254" Nullable="false" />
+    <Property Name="tbl_patrocinio_contacto_directo" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="tbl_patrocinio_celular" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="tbl_patrocinio_fecha_creacion" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="tbl_patrocinio_activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_patrocinio_evento">
+    <Key>
+      <PropertyRef Name="tbl_patrocinio_id" />
+      <PropertyRef Name="tbl_evento" />
+    </Key>
+    <Property Name="tbl_patrocinio_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tbl_evento" Type="int" Nullable="false" />
+    <Property Name="tbl_patrocinio_evento_tipo_aporte" Type="int" Nullable="false" />
+    <Property Name="tbl_patrocinio_evento_desc_aporte" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="tbl_patrocinio_evento_activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_proyecto">
+    <Key>
+      <PropertyRef Name="tbl_proyecto_id" />
+    </Key>
+    <Property Name="tbl_proyecto_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tbl_proyecto_nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="tbl_equipo_id" Type="int" Nullable="false" />
+    <Property Name="tbl_evento_id" Type="int" Nullable="false" />
+    <Property Name="tbl_proyecto_url" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="tbl_proyecto_git" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="tbl_proyecto_activo" Type="bit" Nullable="false" />
+    <Property Name="tbl_proyecto_estatus" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_tipo_aporte">
+    <Key>
+      <PropertyRef Name="tbl_tipo_aporte_id" />
+    </Key>
+    <Property Name="tbl_tipo_aporte_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tbl_tipo_aporte_desc" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="tbl_tipo_aporte_activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_usuario">
+    <Key>
+      <PropertyRef Name="tbl_usuario_id" />
+    </Key>
+    <Property Name="tbl_usuario_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tbl_usuario_correo" Type="varchar" MaxLength="254" Nullable="false" />
+    <Property Name="tbl_usuario_p_nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="tbl_usuario_s_nombre" Type="varchar" MaxLength="45" />
+    <Property Name="tbl_usuario_p_apellido" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="tbl_usuario_s_apellido" Type="varchar" MaxLength="45" />
+    <Property Name="tbl_usuario_fecha_nac" Type="date" Nullable="false" />
+    <Property Name="tbl_usuario_celular" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="tbl_usuario_genero" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="tbl_usuario_password" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="tbl_usuario_username" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="tbl_usuario_ocupacion" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="tbl_usuario_activo" Type="bit" Nullable="false" />
+    <Property Name="tbl_usuario_fecha_crea" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="tbl_usuario_admin" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_c_evento">
+    <End Role="tbl_evento" Type="Self.tbl_evento" Multiplicity="1" />
+    <End Role="tbl_calificacion" Type="Self.tbl_calificacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_evento">
+        <PropertyRef Name="tbl_evento_id" />
+      </Principal>
+      <Dependent Role="tbl_calificacion">
+        <PropertyRef Name="tbl_evento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_c_proyecto">
+    <End Role="tbl_proyecto" Type="Self.tbl_proyecto" Multiplicity="1" />
+    <End Role="tbl_calificacion" Type="Self.tbl_calificacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_proyecto">
+        <PropertyRef Name="tbl_proyecto_id" />
+      </Principal>
+      <Dependent Role="tbl_calificacion">
+        <PropertyRef Name="tbl_proyecto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ce_evento">
+    <End Role="tbl_evento" Type="Self.tbl_evento" Multiplicity="1" />
+    <End Role="tbl_comentario_evento" Type="Self.tbl_comentario_evento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_evento">
+        <PropertyRef Name="tbl_evento_id" />
+      </Principal>
+      <Dependent Role="tbl_comentario_evento">
+        <PropertyRef Name="tbl_evento_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ce_usuario">
+    <End Role="tbl_usuario" Type="Self.tbl_usuario" Multiplicity="1" />
+    <End Role="tbl_comentario_evento" Type="Self.tbl_comentario_evento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_usuario">
+        <PropertyRef Name="tbl_usuario_id" />
+      </Principal>
+      <Dependent Role="tbl_comentario_evento">
+        <PropertyRef Name="tbl_usuario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_cp_proyecto">
+    <End Role="tbl_proyecto" Type="Self.tbl_proyecto" Multiplicity="1" />
+    <End Role="tbl_comentario_proyecto" Type="Self.tbl_comentario_proyecto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_proyecto">
+        <PropertyRef Name="tbl_proyecto_id" />
+      </Principal>
+      <Dependent Role="tbl_comentario_proyecto">
+        <PropertyRef Name="tbl_proyecto_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_cp_usuario">
+    <End Role="tbl_usuario" Type="Self.tbl_usuario" Multiplicity="1" />
+    <End Role="tbl_comentario_proyecto" Type="Self.tbl_comentario_proyecto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_usuario">
+        <PropertyRef Name="tbl_usuario_id" />
+      </Principal>
+      <Dependent Role="tbl_comentario_proyecto">
+        <PropertyRef Name="tbl_usuario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_equipo">
+    <End Role="tbl_equipo" Type="Self.tbl_equipo" Multiplicity="1" />
+    <End Role="tbl_equipo_usuario" Type="Self.tbl_equipo_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_equipo">
+        <PropertyRef Name="tbl_equipo_id" />
+      </Principal>
+      <Dependent Role="tbl_equipo_usuario">
+        <PropertyRef Name="tbl_equipo_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_equipo_ee">
+    <End Role="tbl_equipo" Type="Self.tbl_equipo" Multiplicity="1" />
+    <End Role="tbl_equipo_evento" Type="Self.tbl_equipo_evento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_equipo">
+        <PropertyRef Name="tbl_equipo_id" />
+      </Principal>
+      <Dependent Role="tbl_equipo_evento">
+        <PropertyRef Name="tbl_equipo_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_evento_cat">
+    <End Role="tbl_cat_evento" Type="Self.tbl_cat_evento" Multiplicity="1" />
+    <End Role="tbl_evento" Type="Self.tbl_evento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_cat_evento">
+        <PropertyRef Name="tbl_cat_evento_id" />
+      </Principal>
+      <Dependent Role="tbl_evento">
+        <PropertyRef Name="tbl_cat_evento_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_evento_ee">
+    <End Role="tbl_evento" Type="Self.tbl_evento" Multiplicity="1" />
+    <End Role="tbl_equipo_evento" Type="Self.tbl_equipo_evento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_evento">
+        <PropertyRef Name="tbl_evento_id" />
+      </Principal>
+      <Dependent Role="tbl_equipo_evento">
+        <PropertyRef Name="tbl_evento_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_evento_j">
+    <End Role="tbl_evento" Type="Self.tbl_evento" Multiplicity="1" />
+    <End Role="tbl_jurado" Type="Self.tbl_jurado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_evento">
+        <PropertyRef Name="tbl_evento_id" />
+      </Principal>
+      <Dependent Role="tbl_jurado">
+        <PropertyRef Name="tbl_evento_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_p_evento">
+    <End Role="tbl_evento" Type="Self.tbl_evento" Multiplicity="1" />
+    <End Role="tbl_patrocinio_evento" Type="Self.tbl_patrocinio_evento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_evento">
+        <PropertyRef Name="tbl_evento_id" />
+      </Principal>
+      <Dependent Role="tbl_patrocinio_evento">
+        <PropertyRef Name="tbl_evento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_p_patrocinio">
+    <End Role="tbl_patrocinio" Type="Self.tbl_patrocinio" Multiplicity="1" />
+    <End Role="tbl_patrocinio_evento" Type="Self.tbl_patrocinio_evento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_patrocinio">
+        <PropertyRef Name="tbl_patrocinio_id" />
+      </Principal>
+      <Dependent Role="tbl_patrocinio_evento">
+        <PropertyRef Name="tbl_patrocinio_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_p_tp">
+    <End Role="tbl_tipo_aporte" Type="Self.tbl_tipo_aporte" Multiplicity="1" />
+    <End Role="tbl_patrocinio_evento" Type="Self.tbl_patrocinio_evento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_tipo_aporte">
+        <PropertyRef Name="tbl_tipo_aporte_id" />
+      </Principal>
+      <Dependent Role="tbl_patrocinio_evento">
+        <PropertyRef Name="tbl_patrocinio_evento_tipo_aporte" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pro_equipo">
+    <End Role="tbl_equipo" Type="Self.tbl_equipo" Multiplicity="1" />
+    <End Role="tbl_proyecto" Type="Self.tbl_proyecto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_equipo">
+        <PropertyRef Name="tbl_equipo_id" />
+      </Principal>
+      <Dependent Role="tbl_proyecto">
+        <PropertyRef Name="tbl_equipo_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pro_evento">
+    <End Role="tbl_evento" Type="Self.tbl_evento" Multiplicity="1" />
+    <End Role="tbl_proyecto" Type="Self.tbl_proyecto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_evento">
+        <PropertyRef Name="tbl_evento_id" />
+      </Principal>
+      <Dependent Role="tbl_proyecto">
+        <PropertyRef Name="tbl_evento_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tbl_equipo_usuario_tbl_usuario1">
+    <End Role="tbl_usuario" Type="Self.tbl_usuario" Multiplicity="1" />
+    <End Role="tbl_equipo_usuario" Type="Self.tbl_equipo_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_usuario">
+        <PropertyRef Name="tbl_usuario_id" />
+      </Principal>
+      <Dependent Role="tbl_equipo_usuario">
+        <PropertyRef Name="tbl_usaurio_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_usuario_j">
+    <End Role="tbl_usuario" Type="Self.tbl_usuario" Multiplicity="1" />
+    <End Role="tbl_jurado" Type="Self.tbl_jurado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_usuario">
+        <PropertyRef Name="tbl_usuario_id" />
+      </Principal>
+      <Dependent Role="tbl_jurado">
+        <PropertyRef Name="tbl_jurado_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="hackprodb_4ModelStoreContainer">
+    <EntitySet Name="tbl_calificacion" EntityType="Self.tbl_calificacion" Schema="hackprodb_4" store:Type="Tables" />
+    <EntitySet Name="tbl_cat_evento" EntityType="Self.tbl_cat_evento" Schema="hackprodb_4" store:Type="Tables" />
+    <EntitySet Name="tbl_comentario_evento" EntityType="Self.tbl_comentario_evento" Schema="hackprodb_4" store:Type="Tables" />
+    <EntitySet Name="tbl_comentario_proyecto" EntityType="Self.tbl_comentario_proyecto" Schema="hackprodb_4" store:Type="Tables" />
+    <EntitySet Name="tbl_equipo" EntityType="Self.tbl_equipo" Schema="hackprodb_4" store:Type="Tables" />
+    <EntitySet Name="tbl_equipo_evento" EntityType="Self.tbl_equipo_evento" Schema="hackprodb_4" store:Type="Tables" />
+    <EntitySet Name="tbl_equipo_usuario" EntityType="Self.tbl_equipo_usuario" Schema="hackprodb_4" store:Type="Tables" />
+    <EntitySet Name="tbl_evento" EntityType="Self.tbl_evento" Schema="hackprodb_4" store:Type="Tables" />
+    <EntitySet Name="tbl_jurado" EntityType="Self.tbl_jurado" Schema="hackprodb_4" store:Type="Tables" />
+    <EntitySet Name="tbl_patrocinio" EntityType="Self.tbl_patrocinio" Schema="hackprodb_4" store:Type="Tables" />
+    <EntitySet Name="tbl_patrocinio_evento" EntityType="Self.tbl_patrocinio_evento" Schema="hackprodb_4" store:Type="Tables" />
+    <EntitySet Name="tbl_proyecto" EntityType="Self.tbl_proyecto" Schema="hackprodb_4" store:Type="Tables" />
+    <EntitySet Name="tbl_tipo_aporte" EntityType="Self.tbl_tipo_aporte" Schema="hackprodb_4" store:Type="Tables" />
+    <EntitySet Name="tbl_usuario" EntityType="Self.tbl_usuario" Schema="hackprodb_4" store:Type="Tables" />
+    <AssociationSet Name="fk_c_evento" Association="Self.fk_c_evento">
+      <End Role="tbl_evento" EntitySet="tbl_evento" />
+      <End Role="tbl_calificacion" EntitySet="tbl_calificacion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_c_proyecto" Association="Self.fk_c_proyecto">
+      <End Role="tbl_proyecto" EntitySet="tbl_proyecto" />
+      <End Role="tbl_calificacion" EntitySet="tbl_calificacion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ce_evento" Association="Self.fk_ce_evento">
+      <End Role="tbl_evento" EntitySet="tbl_evento" />
+      <End Role="tbl_comentario_evento" EntitySet="tbl_comentario_evento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ce_usuario" Association="Self.fk_ce_usuario">
+      <End Role="tbl_usuario" EntitySet="tbl_usuario" />
+      <End Role="tbl_comentario_evento" EntitySet="tbl_comentario_evento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_cp_proyecto" Association="Self.fk_cp_proyecto">
+      <End Role="tbl_proyecto" EntitySet="tbl_proyecto" />
+      <End Role="tbl_comentario_proyecto" EntitySet="tbl_comentario_proyecto" />
+    </AssociationSet>
+    <AssociationSet Name="fk_cp_usuario" Association="Self.fk_cp_usuario">
+      <End Role="tbl_usuario" EntitySet="tbl_usuario" />
+      <End Role="tbl_comentario_proyecto" EntitySet="tbl_comentario_proyecto" />
+    </AssociationSet>
+    <AssociationSet Name="fk_equipo" Association="Self.fk_equipo">
+      <End Role="tbl_equipo" EntitySet="tbl_equipo" />
+      <End Role="tbl_equipo_usuario" EntitySet="tbl_equipo_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="fk_equipo_ee" Association="Self.fk_equipo_ee">
+      <End Role="tbl_equipo" EntitySet="tbl_equipo" />
+      <End Role="tbl_equipo_evento" EntitySet="tbl_equipo_evento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_evento_cat" Association="Self.fk_evento_cat">
+      <End Role="tbl_cat_evento" EntitySet="tbl_cat_evento" />
+      <End Role="tbl_evento" EntitySet="tbl_evento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_evento_ee" Association="Self.fk_evento_ee">
+      <End Role="tbl_evento" EntitySet="tbl_evento" />
+      <End Role="tbl_equipo_evento" EntitySet="tbl_equipo_evento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_evento_j" Association="Self.fk_evento_j">
+      <End Role="tbl_evento" EntitySet="tbl_evento" />
+      <End Role="tbl_jurado" EntitySet="tbl_jurado" />
+    </AssociationSet>
+    <AssociationSet Name="fk_p_evento" Association="Self.fk_p_evento">
+      <End Role="tbl_evento" EntitySet="tbl_evento" />
+      <End Role="tbl_patrocinio_evento" EntitySet="tbl_patrocinio_evento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_p_patrocinio" Association="Self.fk_p_patrocinio">
+      <End Role="tbl_patrocinio" EntitySet="tbl_patrocinio" />
+      <End Role="tbl_patrocinio_evento" EntitySet="tbl_patrocinio_evento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_p_tp" Association="Self.fk_p_tp">
+      <End Role="tbl_tipo_aporte" EntitySet="tbl_tipo_aporte" />
+      <End Role="tbl_patrocinio_evento" EntitySet="tbl_patrocinio_evento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pro_equipo" Association="Self.fk_pro_equipo">
+      <End Role="tbl_equipo" EntitySet="tbl_equipo" />
+      <End Role="tbl_proyecto" EntitySet="tbl_proyecto" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pro_evento" Association="Self.fk_pro_evento">
+      <End Role="tbl_evento" EntitySet="tbl_evento" />
+      <End Role="tbl_proyecto" EntitySet="tbl_proyecto" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tbl_equipo_usuario_tbl_usuario1" Association="Self.fk_tbl_equipo_usuario_tbl_usuario1">
+      <End Role="tbl_usuario" EntitySet="tbl_usuario" />
+      <End Role="tbl_equipo_usuario" EntitySet="tbl_equipo_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="fk_usuario_j" Association="Self.fk_usuario_j">
+      <End Role="tbl_usuario" EntitySet="tbl_usuario" />
+      <End Role="tbl_jurado" EntitySet="tbl_jurado" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

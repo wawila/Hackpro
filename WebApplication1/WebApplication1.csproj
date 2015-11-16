@@ -43,11 +43,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -139,10 +146,27 @@
     <Content Include="Content\TLogin\index.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\DataBase_Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataBase_Model.edmx</DependentUpon>
+      <LastGenOutput>DataBase_Model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DataBase_Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataBase_Model.edmx</DependentUpon>
+      <LastGenOutput>DataBase_Model.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\TLogin\config.rb" />
     <Content Include="Content\TLogin\scss\style.scss" />
+    <EntityDeploy Include="Models\DataBase_Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataBase_Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DataBase_Model.edmx.diagram">
+      <DependentUpon>DataBase_Model.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -158,7 +182,64 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DataBase_Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataBase_Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataBase_Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataBase_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataBase_Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataBase_Model.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\tbl_calificacion.cs">
+      <DependentUpon>DataBase_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_cat_evento.cs">
+      <DependentUpon>DataBase_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_comentario_evento.cs">
+      <DependentUpon>DataBase_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_comentario_proyecto.cs">
+      <DependentUpon>DataBase_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_equipo.cs">
+      <DependentUpon>DataBase_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_equipo_evento.cs">
+      <DependentUpon>DataBase_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_equipo_usuario.cs">
+      <DependentUpon>DataBase_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_evento.cs">
+      <DependentUpon>DataBase_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_jurado.cs">
+      <DependentUpon>DataBase_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_patrocinio.cs">
+      <DependentUpon>DataBase_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_patrocinio_evento.cs">
+      <DependentUpon>DataBase_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_proyecto.cs">
+      <DependentUpon>DataBase_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_tipo_aporte.cs">
+      <DependentUpon>DataBase_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_usuario.cs">
+      <DependentUpon>DataBase_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -200,6 +281,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
