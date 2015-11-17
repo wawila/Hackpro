@@ -43,31 +43,54 @@
                             <form action="" method="post" autocomplete="on">
                                 <h1> Registrate </h1>
                                 <p>
-                                    <label for="usernamesignup" class="uname" data-icon="u">Nombre</label>
-                                    @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control", @type = "text", @required = "required", @placeholder = "Nombre" } })
-                                    @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                                    <label for="usernamesignup" class="uname" data-icon="u">Primer Nombre</label>
+                                    @Html.EditorFor(model => model.PNombre, new { htmlAttributes = new { @class = "form-control", @type = "text", @placeholder = "Nombre" } })
+                                    @Html.ValidationMessageFor(model => model.PNombre, "", new { @class = "text-danger" })
                                 </p>
                                 <p>
-                                    <label for="usernamesignup" class="uname" data-icon="u">Apellido</label>
-                                    @Html.EditorFor(model => model.Apellido, new { htmlAttributes = new { @class = "form-control", @type = "text", @required = "required", @placeholder = "Apellido" } })
-                                    @Html.ValidationMessageFor(model => model.Apellido, "", new { @class = "text-danger" })
+                                    <label for="usernamesignup" class="uname" data-icon="u">Segundo Nombre</label>
+                                    @Html.EditorFor(model => model.SNombre, new { htmlAttributes = new { @class = "form-control", @type = "text", @placeholder = "Nombre" } })
+                                    @Html.ValidationMessageFor(model => model.SNombre, "", new { @class = "text-danger" })
+                                </p>
+                                <p>
+                                    <label for="usernamesignup" class="uname" data-icon="u">Primer Apellido</label>
+                                    @Html.EditorFor(model => model.PApellido, new { htmlAttributes = new { @class = "form-control", @type = "text", @placeholder = "Apellido" } })
+                                    @Html.ValidationMessageFor(model => model.PApellido, "", new { @class = "text-danger" })
+                                </p>
+                                <p>
+                                    <label for="usernamesignup" class="uname" data-icon="u">Segundo Apellido</label>
+                                    @Html.EditorFor(model => model.PApellido, new { htmlAttributes = new { @class = "form-control", @type = "text", @placeholder = "Apellido" } })
+                                    @Html.ValidationMessageFor(model => model.PApellido, "", new { @class = "text-danger" })
                                 </p>
                                 <p>
                                     <label for="emailsignup" class="youmail" data-icon="e">Correo</label>
-                                    @Html.EditorFor(model => model.Correo, new { htmlAttributes = new { @class = "form-control", @type = "email", @required = "required", @placeholder = "Correo@Direc.com" } })
+                                    @Html.EditorFor(model => model.Correo, new { htmlAttributes = new { @class = "form-control", @type = "email", @placeholder = "Correo@Direc.com" } })
                                     @Html.ValidationMessageFor(model => model.Correo, "", new { @class = "text-danger" })
                                 </p>
                                 <p>
                                     <label for="passwordsignup" class="youpasswd" data-icon="p">Contraseña </label>
-                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @type = "password", @required = "required", @placeholder = "Constraseña" } })
+                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @type = "password", @placeholder = "Constraseña" } })
                                     @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                                 </p>
                                 <p>
-                                    <!-- <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Confirmar Contraseña </label> -->             
-                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @type = "text", @required = "required", @placeholder = "Confirmar Contraseña" } })
-                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Confirmar Contraseña </label>             
+                                    @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", @type = "text", @placeholder = "Confirmar Contraseña" } })
+                                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
                                     <!---<input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO" /> -->
                                 </p>
+                                <p>
+                                    <label for="usernamesignup" class="uname" data-icon="u">Genero</label>
+                                    @Html.EditorFor(model => model.Genero, new { htmlAttributes = new { @class = "form-control", @type = "text", @placeholder = "M/F" } })
+                                    @Html.ValidationMessageFor(model => model.Genero, "", new { @class = "text-danger" })
+                                </p>
+                                <p>
+                                    <label for="usernamesignup" class="uname" data-icon="u">Fecha de Nacimiento</label>
+                                    @Html.EditorFor(model => model.FechaN, new { htmlAttributes = new { @class = "form-control", @type = "text", @placeholder = "DD/MM/AAAA" } })
+                                    @Html.ValidationMessageFor(model => model.FechaN, "", new { @class = "text-danger" })
+                                </p>
+                                <label for="usernamesignup" class="uname" data-icon="u">Ocupacion</label>
+                                @Html.EditorFor(model => model.FechaN, new { htmlAttributes = new { @class = "form-control", @type = "text", @placeholder = "Ocupacion" } })
+                                @Html.ValidationMessageFor(model => model.FechaN, "", new { @class = "text-danger" })
                                 <p class="signin button">
                                     <input type="submit" value="Registrate" />
                                 </p>

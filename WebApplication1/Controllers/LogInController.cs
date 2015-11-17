@@ -20,7 +20,6 @@ namespace System.Windows.Forms
                 return View("LogIn");
             }
             [HttpPost]
-
             public RedirectToRouteResult LogIn(LoginModel log)
             {
                 if (ModelState.IsValid)
@@ -52,6 +51,24 @@ namespace System.Windows.Forms
             {
                 return View("Register");
             }
+
+            [HttpPost]
+            public ActionResult Register(UserModel user)
+            {
+                if (ModelState.IsValid)
+                {
+                    //ConnectUpdate rg = new ConnectUpdate();
+                    //hackprodb_4Entities dbu = ;
+
+                    return View("Login");
+                }
+                else
+                {
+                    
+                }
+                return View();
+            }
+
         }
     }
 }
