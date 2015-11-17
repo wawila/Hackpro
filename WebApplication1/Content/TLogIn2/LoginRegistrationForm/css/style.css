@@ -308,7 +308,7 @@ p.change_link{
 }
 #register{	
 	z-index: 21;
-	opacity: 0;
+	opacity: 1;
 }
 #login{
 	z-index: 22;
