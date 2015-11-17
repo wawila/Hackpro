@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="hackprodb_4ModelStoreContainer" CdmEntityContainer="hackprodb_4Entities">
+    <EntitySetMapping Name="tbl_calificacion">
+      <EntityTypeMapping TypeName="hackprodb_4Model.tbl_calificacion">
+        <MappingFragment StoreEntitySet="tbl_calificacion">
+          <ScalarProperty Name="tbl_evento" ColumnName="tbl_evento" />
+          <ScalarProperty Name="tbl_proyecto" ColumnName="tbl_proyecto" />
+          <ScalarProperty Name="tbl_calificacion_jurado" ColumnName="tbl_calificacion_jurado" />
+          <ScalarProperty Name="tbl_calificacion_pueblo" ColumnName="tbl_calificacion_pueblo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_cat_evento">
+      <EntityTypeMapping TypeName="hackprodb_4Model.tbl_cat_evento">
+        <MappingFragment StoreEntitySet="tbl_cat_evento">
+          <ScalarProperty Name="tbl_cat_evento_id" ColumnName="tbl_cat_evento_id" />
+          <ScalarProperty Name="tbl_cat_evento_desc" ColumnName="tbl_cat_evento_desc" />
+          <ScalarProperty Name="tbl_cat_evento_activo" ColumnName="tbl_cat_evento_activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_comentario_evento">
+      <EntityTypeMapping TypeName="hackprodb_4Model.tbl_comentario_evento">
+        <MappingFragment StoreEntitySet="tbl_comentario_evento">
+          <ScalarProperty Name="tbl_comentario_evento_id" ColumnName="tbl_comentario_evento_id" />
+          <ScalarProperty Name="tbl_usuario_id" ColumnName="tbl_usuario_id" />
+          <ScalarProperty Name="tbl_evento_id" ColumnName="tbl_evento_id" />
+          <ScalarProperty Name="tbl_comentario_evento_fecha" ColumnName="tbl_comentario_evento_fecha" />
+          <ScalarProperty Name="tbl_comentario_evento_like" ColumnName="tbl_comentario_evento_like" />
+          <ScalarProperty Name="tbl_comentario_evento_comentario" ColumnName="tbl_comentario_evento_comentario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_comentario_proyecto">
+      <EntityTypeMapping TypeName="hackprodb_4Model.tbl_comentario_proyecto">
+        <MappingFragment StoreEntitySet="tbl_comentario_proyecto">
+          <ScalarProperty Name="tbl_comentario_proyecto_id" ColumnName="tbl_comentario_proyecto_id" />
+          <ScalarProperty Name="tbl_usuario_id" ColumnName="tbl_usuario_id" />
+          <ScalarProperty Name="tbl_proyecto_id" ColumnName="tbl_proyecto_id" />
+          <ScalarProperty Name="tbl_comentario_proyecto_fecha" ColumnName="tbl_comentario_proyecto_fecha" />
+          <ScalarProperty Name="tbl_comentario_proyecto_comentario" ColumnName="tbl_comentario_proyecto_comentario" />
+          <ScalarProperty Name="tbl_comentario_proyecto_like" ColumnName="tbl_comentario_proyecto_like" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_equipo">
+      <EntityTypeMapping TypeName="hackprodb_4Model.tbl_equipo">
+        <MappingFragment StoreEntitySet="tbl_equipo">
+          <ScalarProperty Name="tbl_equipo_id" ColumnName="tbl_equipo_id" />
+          <ScalarProperty Name="tbl_equipo_nombre" ColumnName="tbl_equipo_nombre" />
+          <ScalarProperty Name="tbl_equipo_fecha_creacion" ColumnName="tbl_equipo_fecha_creacion" />
+          <ScalarProperty Name="tbl_equipo_activo" ColumnName="tbl_equipo_activo" />
+          <ScalarProperty Name="tbl_equipo_usuario_admin" ColumnName="tbl_equipo_usuario_admin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_equipo_evento">
+      <EntityTypeMapping TypeName="hackprodb_4Model.tbl_equipo_evento">
+        <MappingFragment StoreEntitySet="tbl_equipo_evento">
+          <ScalarProperty Name="tbl_equipo_id" ColumnName="tbl_equipo_id" />
+          <ScalarProperty Name="tbl_evento_id" ColumnName="tbl_evento_id" />
+          <ScalarProperty Name="tbl_equipo_evento_fecha_crea" ColumnName="tbl_equipo_evento_fecha_crea" />
+          <ScalarProperty Name="tbl_equipo_evento_activo" ColumnName="tbl_equipo_evento_activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_equipo_usuario">
+      <EntityTypeMapping TypeName="hackprodb_4Model.tbl_equipo_usuario">
+        <MappingFragment StoreEntitySet="tbl_equipo_usuario">
+          <ScalarProperty Name="tbl_equipo_id" ColumnName="tbl_equipo_id" />
+          <ScalarProperty Name="tbl_usaurio_id" ColumnName="tbl_usaurio_id" />
+          <ScalarProperty Name="tbl_equipo_usuario_activo" ColumnName="tbl_equipo_usuario_activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_evento">
+      <EntityTypeMapping TypeName="hackprodb_4Model.tbl_evento">
+        <MappingFragment StoreEntitySet="tbl_evento">
+          <ScalarProperty Name="tbl_evento_id" ColumnName="tbl_evento_id" />
+          <ScalarProperty Name="tbl_evento_nombre" ColumnName="tbl_evento_nombre" />
+          <ScalarProperty Name="tbl_evento_desc" ColumnName="tbl_evento_desc" />
+          <ScalarProperty Name="tbl_evento_lugar" ColumnName="tbl_evento_lugar" />
+          <ScalarProperty Name="tbl_evento_lugar_x" ColumnName="tbl_evento_lugar_x" />
+          <ScalarProperty Name="tbl_evento_lugar_y" ColumnName="tbl_evento_lugar_y" />
+          <ScalarProperty Name="tbl_evento_activo" ColumnName="tbl_evento_activo" />
+          <ScalarProperty Name="tbl_evento_duracion" ColumnName="tbl_evento_duracion" />
+          <ScalarProperty Name="tbl_evento_fecha_inicio" ColumnName="tbl_evento_fecha_inicio" />
+          <ScalarProperty Name="tbl_evento_fecha_fin" ColumnName="tbl_evento_fecha_fin" />
+          <ScalarProperty Name="tbl_usuario_id" ColumnName="tbl_usuario_id" />
+          <ScalarProperty Name="tbl_cat_evento_id" ColumnName="tbl_cat_evento_id" />
+          <ScalarProperty Name="tbl_evento_presupuesto" ColumnName="tbl_evento_presupuesto" />
+          <ScalarProperty Name="tbl_evento_url" ColumnName="tbl_evento_url" />
+          <ScalarProperty Name="tbl_evento_cal_jurado" ColumnName="tbl_evento_cal_jurado" />
+          <ScalarProperty Name="tbl_evento_cal_pueblo" ColumnName="tbl_evento_cal_pueblo" />
+          <ScalarProperty Name="tbl_evento_precio" ColumnName="tbl_evento_precio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_jurado">
+      <EntityTypeMapping TypeName="hackprodb_4Model.tbl_jurado">
+        <MappingFragment StoreEntitySet="tbl_jurado">
+          <ScalarProperty Name="tbl_jurado_id" ColumnName="tbl_jurado_id" />
+          <ScalarProperty Name="tbl_evento_id" ColumnName="tbl_evento_id" />
+          <ScalarProperty Name="tbl_jurado_activo" ColumnName="tbl_jurado_activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_patrocinio">
+      <EntityTypeMapping TypeName="hackprodb_4Model.tbl_patrocinio">
+        <MappingFragment StoreEntitySet="tbl_patrocinio">
+          <ScalarProperty Name="tbl_patrocinio_id" ColumnName="tbl_patrocinio_id" />
+          <ScalarProperty Name="tbl_patrocinio_nombre" ColumnName="tbl_patrocinio_nombre" />
+          <ScalarProperty Name="tbl_patrocinio_correo" ColumnName="tbl_patrocinio_correo" />
+          <ScalarProperty Name="tbl_patrocinio_contacto_directo" ColumnName="tbl_patrocinio_contacto_directo" />
+          <ScalarProperty Name="tbl_patrocinio_celular" ColumnName="tbl_patrocinio_celular" />
+          <ScalarProperty Name="tbl_patrocinio_fecha_creacion" ColumnName="tbl_patrocinio_fecha_creacion" />
+          <ScalarProperty Name="tbl_patrocinio_activo" ColumnName="tbl_patrocinio_activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_patrocinio_evento">
+      <EntityTypeMapping TypeName="hackprodb_4Model.tbl_patrocinio_evento">
+        <MappingFragment StoreEntitySet="tbl_patrocinio_evento">
+          <ScalarProperty Name="tbl_patrocinio_id" ColumnName="tbl_patrocinio_id" />
+          <ScalarProperty Name="tbl_evento" ColumnName="tbl_evento" />
+          <ScalarProperty Name="tbl_patrocinio_evento_tipo_aporte" ColumnName="tbl_patrocinio_evento_tipo_aporte" />
+          <ScalarProperty Name="tbl_patrocinio_evento_desc_aporte" ColumnName="tbl_patrocinio_evento_desc_aporte" />
+          <ScalarProperty Name="tbl_patrocinio_evento_activo" ColumnName="tbl_patrocinio_evento_activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_proyecto">
+      <EntityTypeMapping TypeName="hackprodb_4Model.tbl_proyecto">
+        <MappingFragment StoreEntitySet="tbl_proyecto">
+          <ScalarProperty Name="tbl_proyecto_id" ColumnName="tbl_proyecto_id" />
+          <ScalarProperty Name="tbl_proyecto_nombre" ColumnName="tbl_proyecto_nombre" />
+          <ScalarProperty Name="tbl_equipo_id" ColumnName="tbl_equipo_id" />
+          <ScalarProperty Name="tbl_evento_id" ColumnName="tbl_evento_id" />
+          <ScalarProperty Name="tbl_proyecto_url" ColumnName="tbl_proyecto_url" />
+          <ScalarProperty Name="tbl_proyecto_git" ColumnName="tbl_proyecto_git" />
+          <ScalarProperty Name="tbl_proyecto_activo" ColumnName="tbl_proyecto_activo" />
+          <ScalarProperty Name="tbl_proyecto_estatus" ColumnName="tbl_proyecto_estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_tipo_aporte">
+      <EntityTypeMapping TypeName="hackprodb_4Model.tbl_tipo_aporte">
+        <MappingFragment StoreEntitySet="tbl_tipo_aporte">
+          <ScalarProperty Name="tbl_tipo_aporte_id" ColumnName="tbl_tipo_aporte_id" />
+          <ScalarProperty Name="tbl_tipo_aporte_desc" ColumnName="tbl_tipo_aporte_desc" />
+          <ScalarProperty Name="tbl_tipo_aporte_activo" ColumnName="tbl_tipo_aporte_activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_usuario">
+      <EntityTypeMapping TypeName="hackprodb_4Model.tbl_usuario">
+        <MappingFragment StoreEntitySet="tbl_usuario">
+          <ScalarProperty Name="tbl_usuario_id" ColumnName="tbl_usuario_id" />
+          <ScalarProperty Name="tbl_usuario_correo" ColumnName="tbl_usuario_correo" />
+          <ScalarProperty Name="tbl_usuario_p_nombre" ColumnName="tbl_usuario_p_nombre" />
+          <ScalarProperty Name="tbl_usuario_s_nombre" ColumnName="tbl_usuario_s_nombre" />
+          <ScalarProperty Name="tbl_usuario_p_apellido" ColumnName="tbl_usuario_p_apellido" />
+          <ScalarProperty Name="tbl_usuario_s_apellido" ColumnName="tbl_usuario_s_apellido" />
+          <ScalarProperty Name="tbl_usuario_fecha_nac" ColumnName="tbl_usuario_fecha_nac" />
+          <ScalarProperty Name="tbl_usuario_celular" ColumnName="tbl_usuario_celular" />
+          <ScalarProperty Name="tbl_usuario_genero" ColumnName="tbl_usuario_genero" />
+          <ScalarProperty Name="tbl_usuario_password" ColumnName="tbl_usuario_password" />
+          <ScalarProperty Name="tbl_usuario_username" ColumnName="tbl_usuario_username" />
+          <ScalarProperty Name="tbl_usuario_ocupacion" ColumnName="tbl_usuario_ocupacion" />
+          <ScalarProperty Name="tbl_usuario_activo" ColumnName="tbl_usuario_activo" />
+          <ScalarProperty Name="tbl_usuario_fecha_crea" ColumnName="tbl_usuario_fecha_crea" />
+          <ScalarProperty Name="tbl_usuario_admin" ColumnName="tbl_usuario_admin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

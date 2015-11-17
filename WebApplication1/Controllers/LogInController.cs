@@ -20,36 +20,24 @@ namespace System.Windows.Forms
                 return View("LogIn");
             }
             [HttpPost]
-            public RedirectToRouteResult LogIn(UserModel log)
+
+            public RedirectToRouteResult LogIn(LoginModel log)
             {
-                Diagnostics.Debug.WriteLine("LogIn");
-                Diagnostics.Debug.WriteLine(log.Nombre);
-                Diagnostics.Debug.WriteLine(log.Apellido);
-                Diagnostics.Debug.WriteLine(log.User);
-                Diagnostics.Debug.WriteLine(log.Password);
-                Diagnostics.Debug.WriteLine(log.Correo);
-                Diagnostics.Debug.WriteLine(log.Genero);
-                Diagnostics.Debug.WriteLine(log.Celular);
-           
-            Sesion li = new Sesion();
-                if (li.user == null)
+                if (ModelState.IsValid)
                 {
-                    string usuario = log.User;
-                    string clave = log.Password;
-
-                    if (li.IniciarSesion(usuario, clave))
-                        return RedirectToAction("Index", "Dashboard");
-
+                    hackprodb_4Entities db = new hackprodb_4Entities();
+                    var login = db.tbl_usuario.Where(p => p.tbl_usuario_correo.Equals(log.User) && p.tbl_usuario_password.Equals(log.Pass));
+                    if (login.Count() == 1)
+                    {
+                        //Session["User"] = "Jose4";
+                        return RedirectToAction("Index","Dashboard");
+                    }
                     else
-                        return RedirectToAction("LogIn", "LogIn");
+                    {
+                        ModelState.AddModelError("Password", "Email or Password not valid");
+                    }
                 }
-                else
-                {
-                    li.user = log.User;
-                    li.key = log.Password;
-
-                    return RedirectToAction("LogIn", "LogIn");
-                }
+                return RedirectToAction("");
             }
 
             public ActionResult ErrorLoging()
