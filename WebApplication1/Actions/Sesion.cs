@@ -8,8 +8,8 @@ namespace WebApplication1.Actions
     public class Sesion
     {
 
-        public string user = null;
-        public string key = null;
+        public string user = "w";
+        public string key = "1";
 
         public bool IniciarSesion(string usuario, string clave)
         {

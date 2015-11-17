@@ -31,3 +31,38 @@ c:\users\david chavarria\documents\visual studio 2015\Projects\WebApplication1\W
 c:\users\david chavarria\documents\visual studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
 c:\users\david chavarria\documents\visual studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 c:\users\david chavarria\documents\visual studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\roslyn\csc.exe
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\roslyn\vbc.exe
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\roslyn\VBCSCompiler.exe
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\WebApplication1.dll.config
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\WebApplication1.dll
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\WebApplication1.pdb
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\System.Web.Helpers.dll
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\System.Web.Mvc.dll
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\System.Web.Razor.dll
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\System.Web.Webpages.dll
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\System.Web.Webpages.Razor.dll
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\System.Web.Razor.xml
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\System.Web.Webpages.xml
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\System.Web.Webpages.Razor.xml
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\System.Web.Helpers.xml
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\System.Web.Mvc.xml
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\obj\Debug\WebApplication1.dll
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\EntityFramework.dll
+C:\Users\Jose\Documents\GitHub\Hackpro\WebApplication1\bin\EntityFramework.xml
