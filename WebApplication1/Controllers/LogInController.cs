@@ -26,11 +26,13 @@ namespace System.Windows.Forms
                 if (ModelState.IsValid)
                 {
                     hackprodb_4Entities db = new hackprodb_4Entities();
+
+                    // System.ArgumentException Linea de Abajo
                     var login = db.tbl_usuario.Where(p => p.tbl_usuario_correo.Equals(log.User) && p.tbl_usuario_password.Equals(log.Pass));
                     if (login.Count() == 1)
                     {
                         //Session["User"] = "Jose4";
-                        return RedirectToAction("Index","Dashboard");
+                        return RedirectToAction("Index", "Dashboard");
                     }
                     else
                     {
@@ -45,17 +47,10 @@ namespace System.Windows.Forms
                 return View("ErrorLoging");
             }
 
-            [HttpPost]
-            public void Register(UserModel log)
+            [HttpGet]
+            public ActionResult Register()
             {
-                Diagnostics.Debug.WriteLine("Register");
-                Diagnostics.Debug.WriteLine(log.Nombre);
-                Diagnostics.Debug.WriteLine(log.Apellido);
-                Diagnostics.Debug.WriteLine(log.User);
-                Diagnostics.Debug.WriteLine(log.Password);
-                Diagnostics.Debug.WriteLine(log.Correo);
-                Diagnostics.Debug.WriteLine(log.Genero);
-                Diagnostics.Debug.WriteLine(log.Celular);
+                return View("Register");
             }
         }
     }

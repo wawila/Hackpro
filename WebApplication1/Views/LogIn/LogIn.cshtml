@@ -17,57 +17,58 @@
     <link rel="shortcut icon" href="../favicon.ico">
 </head>
 <body>
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="container">
-        <!-- Codrops top bar -->
-        <div class="codrops-top">
-            <span class="right">
-                <a href=" http://www.unitec.edu">
-                    <strong>UNITEC</strong>
-                </a>
-            </span>
-            <div class="clr"></div>
-        </div><!--/ Codrops top bar -->
-        <header>
-            <h1><span>#HackPro </span>Iniciar Sesion/Registrar</h1>
-        </header>
-        <section>
-            <div id="container_demo">
-                <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
-                <a class="hiddenanchor" id="toregister"></a>
-                <a class="hiddenanchor" id="tologin"></a>
-                <div id="wrapper">
-                    <div id="login" class="animate form">
-                        <form action="LogIn" method="post" autocomplete="on">
-                            <h1>Iniciar Sesion</h1>
-                            <p>
-                                <label class="uname" data-icon="u"> Usuario/Correo </label>
-                                @Html.EditorFor(model => model.User, new { htmlAttributes = new { @class = "form-control", @required = "required", @placeholder = "Correo" } })
-                                @Html.ValidationMessageFor(model => model.User, "", new { @class = "text-danger"})
-                            </p>
-                            <p>
-                                <label class="youpasswd" data-icon="p"> Contraseña </label>
-                                @Html.EditorFor(model => model.Pass, new { htmlAttributes = new { @class = "form-control", @required = "required", @placeholder = "Password", @type = "password" } })
-                                @Html.ValidationMessageFor(model => model.Pass, "", new { @class = "text-danger" })
-                            </p>
-                            <p class="keeplogin">
-                                <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
-                                <label for="loginkeeping">Mantenerme Conectado:</label>
-                            </p>
-                            <p class="login button">
-                                <input type="submit" value="Iniciar Sesion" />
-                            </p>
-                            <p class="change_link">
-                                No eres miembro ?
-                                <a href="#toregister" class="to_register"> Registrate Aqui! </a>
-                            </p>
-                        </form>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="container">
+            <!-- Codrops top bar -->
+            <div class="codrops-top">
+                <span class="right">
+                    <a href=" http://www.unitec.edu">
+                        <strong>UNITEC</strong>
+                    </a>
+                </span>
+                <div class="clr"></div>
+            </div><!--/ Codrops top bar -->
+            <header>
+                <h1><span>#HackPro </span>Honduras</h1>
+            </header>
+            <section>
+                <div id="container_demo">
+                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form action="LogIn" method="post" autocomplete="on">
+                                <h1>Iniciar Sesion</h1>
+                                <p>
+                                    <label class="uname" data-icon="u"> Usuario/Correo </label>
+                                    @Html.EditorFor(model => model.User, new { htmlAttributes = new { @class = "form-control", @required = "required", @placeholder = "Correo" } })
+                                    @Html.ValidationMessageFor(model => model.User, "", new { @class = "text-danger" })
+                                </p>
+                                <p>
+                                    <label class="youpasswd" data-icon="p"> Contraseña </label>
+                                    @Html.EditorFor(model => model.Pass, new { htmlAttributes = new { @class = "form-control", @required = "required", @placeholder = "Contraseña", @type = "password" } })
+                                    @Html.ValidationMessageFor(model => model.Pass, "", new { @class = "text-danger" })
+                                </p>
+                                <p class="keeplogin">
+                                    <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
+                                    <label for="loginkeeping">Mantenerme Conectado:</label>
+                                </p>
+                                <p class="login button">
+                                    <input type="submit" value="Iniciar Sesion" />
+                                </p>
+                                <p class="change_link">
+                                    No eres miembro ?
+                                    <a href="@Url.Action("Register", "LogIn")" class="to_register"> Registrate Aqui! </a>
+                                </p>
+                            </form>
+                        </div>
                     </div>
-        </section>
-    </div>
-}
+            </section>
+        </div>
+    }
 </body>
 </html>
