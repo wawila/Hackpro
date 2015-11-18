@@ -34,7 +34,7 @@ namespace WebApplication1.Models
         public string ConfirmPassword { get; set; }
 
         [RegularExpression(@"^(0[1-9]|1[012])[/](0[1-9]|[12][0-9]|3[01])[/]\d{4}$", ErrorMessage = "Formato debe ser asi MM/dd/yyyy")]
-        public string FechaN { get; set; }
+        public DateTime FechaN { get; set; }
 
         [RegularExpression("^[0-9]*$", ErrorMessage = "Solo se puede ingresar numeros")]
         public string Celular { get; set; }
