@@ -8,9 +8,10 @@ namespace WebApplication1.Models
 {
     public class UserModel
     {
-        [Required(ErrorMessage = "Ususario Requerido") ]
-        public string User { get; set; }
+        [Required(ErrorMessage = "Usuario Requerido")]
+        public string UserName { get; set; }
 
+        //hackprodb_4Entities db = new hackprodb_4Entities();
         [Required(ErrorMessage = "Correo Requerido")]
         [RegularExpression(".+\\@.+\\..+", ErrorMessage = "No Es un correo Valido")]
         public string Correo { get; set; }
@@ -28,23 +29,27 @@ namespace WebApplication1.Models
         public string SApellido { get; set; }
 
         [Required(ErrorMessage = "Contraseña Requerida")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Contraseña Requerida")]
+        [DataType(DataType.Password)]
+        [Compare("Password")]
         public string ConfirmPassword { get; set; }
-
-        [RegularExpression(@"^(0[1-9]|1[012])[/](0[1-9]|[12][0-9]|3[01])[/]\d{4}$", ErrorMessage = "Formato debe ser asi MM/dd/yyyy")]
+        
+        [Required(ErrorMessage = "Fecha Requerida")]
         public DateTime FechaN { get; set; }
 
+        [Required(ErrorMessage = "Celular Requerido")]
         [RegularExpression("^[0-9]*$", ErrorMessage = "Solo se puede ingresar numeros")]
         public string Celular { get; set; }
 
         [StringLength(1)]
-        [RegularExpression("[Mm]{1}[Ff]{1}", ErrorMessage = "M para Masculino F para Femenino")]
+        [Required(ErrorMessage = "Genero Requerido")]
         public string Genero { get; set; }
 
         [Required(ErrorMessage = "Ocupacion Requerida")]
         public string Ocupacion { get; set; }
-
+        
     }
 }

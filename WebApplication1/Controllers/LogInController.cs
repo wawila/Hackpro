@@ -6,8 +6,6 @@ using System.Web.Mvc;
 using WebApplication1.Actions;
 using WebApplication1.Models;
 using System.Configuration;
-using System.Data.Common;
-using System.Data.Entity;
 
 namespace System.Windows.Forms
 {
@@ -22,7 +20,7 @@ namespace System.Windows.Forms
                 return View("LogIn");
             }
             [HttpPost]
-            public RedirectToRouteResult LogIn(LoginModel log)
+            public ActionResult LogIn(LoginModel log)
             {
                 if (ModelState.IsValid)
                 {
@@ -33,14 +31,14 @@ namespace System.Windows.Forms
                     if (login.Count() == 1)
                     {
                         //Session["User"] = "Jose4";
-                        return RedirectToAction("Index", "Dashboard");
+                        return View("Dashboard");
                     }
                     else
                     {
-                        ModelState.AddModelError("Password", "Email or Password not valid");
+                        ModelState.AddModelError("Password", "Correo O Contraseña no Validos");
                     }
                 }
-                return RedirectToAction("");
+                return View();
             }
 
             public ActionResult ErrorLoging()
@@ -57,34 +55,42 @@ namespace System.Windows.Forms
             [HttpPost]
             public ActionResult Register(UserModel user)
             {
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
                 if (ModelState.IsValid)
                 {
-
+                    System.Diagnostics.Debug.WriteLine("Es Valido");
                     DateTime Fecha = DateTime.Now;
                     //ConnectUpdate udb = new ConnectUpdate();
                     hackprodb_4Entities db = new hackprodb_4Entities();
-                    tbl_usuario Usuario = new tbl_usuario(); 
-                    Usuario.tbl_usuario_correo = user.Correo;
-                    Usuario.tbl_usuario_password = user.Password;
-                    Usuario.tbl_usuario_p_nombre = user.PNombre;
-                    Usuario.tbl_usuario_s_nombre = user.SNombre;
-                    Usuario.tbl_usuario_p_apellido = user.PApellido;
-                    Usuario.tbl_usuario_s_apellido = user.SApellido;
-                    Usuario.tbl_usuario_activo = true;
-                    Usuario.tbl_usuario_celular = user.Celular;
-                    Usuario.tbl_usuario_fecha_nac = user.FechaN;
-                    Usuario.tbl_usuario_genero = user.Genero;
-                    Usuario.tbl_usuario_ocupacion = user.Ocupacion;
-                    Usuario.tbl_usuario_fecha_crea =  Fecha;
-                    Usuario.tbl_usuario_admin = false;
-                    db.tbl_usuario.Add(Usuario);
-                    db.SaveChanges();
-                    return View("Login");
+                    var check = db.tbl_usuario.Where(p => p.tbl_usuario_correo.Equals(user.Correo));
+                    if (check.Any() == false)
+                    {
+                        tbl_usuario Usuario = new tbl_usuario();
+                        Usuario.tbl_usuario_correo = user.Correo;
+                        Usuario.tbl_usuario_username = user.UserName;
+                        Usuario.tbl_usuario_password = user.Password;
+                        Usuario.tbl_usuario_p_nombre = user.PNombre;
+                        Usuario.tbl_usuario_s_nombre = user.SNombre;
+                        Usuario.tbl_usuario_p_apellido = user.PApellido;
+                        Usuario.tbl_usuario_s_apellido = user.SApellido;
+                        Usuario.tbl_usuario_activo = true;
+                        Usuario.tbl_usuario_celular = user.Celular;
+                        Usuario.tbl_usuario_fecha_nac = user.FechaN;
+                        Usuario.tbl_usuario_genero = user.Genero;
+                        Usuario.tbl_usuario_ocupacion = user.Ocupacion;
+                        Usuario.tbl_usuario_fecha_crea = Fecha;
+                        Usuario.tbl_usuario_admin = false;
+                        db.tbl_usuario.Add(Usuario);
+                        db.SaveChanges();
+                        return View("Login");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("ErrorC", "Este Correo ya Existe");
+                    }
                 }
-                else
-                {
-                    
-                }
+                
+                System.Diagnostics.Debug.WriteLine("No Es Valido");
                 return View();
             }
 

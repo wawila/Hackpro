@@ -8,7 +8,7 @@ namespace WebApplication1.Models
 {
     public class LoginModel
     {
-        [Required(ErrorMessage = "Ususario Requerido")]
+        [Required(ErrorMessage = "Usuario Requerido")]
         public string User { get; set; }
 
         [Required(ErrorMessage = "Contraseña Requerida")]
