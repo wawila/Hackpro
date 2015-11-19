@@ -12,7 +12,7 @@
 -->
 <html>
 <head>
-    <title>Wawila</title>
+    <title>#HackPro</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -26,7 +26,7 @@
     <header id="header">
 
         <!-- Logo -->
-        <h1 id="logo">Big Picture</h1>
+        <h1 id="logo">#HackPro Honduras</h1>
 
         <!-- Nav -->
         <nav id="nav">
@@ -42,18 +42,20 @@
     </header>
 
     <!-- Intro -->
-    <section id="intro" class="main style1 dark fullscreen">
+    <section id="intro" class="main style1 fullscreen">
         <div class="content container 75%">
             <header>
-                <h2>Hey.</h2>
+                <h2>#HackPro</h2>
             </header>
             <p>
-                Welcome to <strong>Big Picture</strong> a responsive site template designed
-                by <a href="http://html5up.net">HTML5 UP</a>, built on <strong><a href="http://getskel.com">Skel</a></strong>,
-                and released for free under the <a href="http://html5up.net/license">Creative Commons Attribution 3.0 license</a>.
+                Bienvenidos a <strong>#HackPro</strong> Honduras!<br /> Powered by <strong>UNITEC</strong>
             </p>
             <footer>
-                <a href="#one" class="button style2 down">More</a>
+                <a href="@Url.Action("EventForm", "Dashboard")" id="introleft" class="button styleD">Crear un Hackathon</a>
+                <a href="#one" id="introright" class="button styleD">Ingresara tu Usuario</a>
+                <br />
+                <br />
+                <a href="#one" class="button style2a down">Down</a>
             </footer>
         </div>
     </section>
@@ -92,19 +94,16 @@
     <section id="work" class="main style3 primary">
         <div class="content container">
             <header>
-                <h2>My Work</h2>
+                <h2>Patrocinadores</h2>
                 <p>
-                    Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-                    Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis
-                    arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae.
+                    [Mensaje]
                 </p>
             </header>
 
             <!-- Lightbox Gallery  -->
             <div class="container 75% gallery">
                 <div class="row 0% images">
-
-                    <div class="6u 12u(mobile)"><a href="~/Content/TDashboard/images/fulls/01.jpg" class="image fit from-left"><img src="~/Content/TDashboard/images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a></div>
+                    <div class="6u 12u(mobile)"><a href="~/Content/logoUNITEC.png" class="image fit from-left"><img src="~/Content/logoUNITEC.png" title="UNITEC" alt="UNITEC" /></a></div>
                     <div class="6u 12u(mobile)"><a href="~/Content/TDashboard/images/fulls/02.jpg" class="image fit from-right"><img src="~/Content/TDashboard/images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a></div>
                 </div>
                 <div class="row 0% images">
@@ -124,24 +123,24 @@
     <section id="contact" class="main style3 secondary">
         <div class="content container">
             <header>
-                <h2>Say Hello.</h2>
-                <p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.</p>
+                <h2>Contactanos</h2>
+                <p>[Mensaje]</p>
             </header>
             <div class="box container 75%">
 
                 <!-- Contact Form -->
                 <form method="post" action="#">
                     <div class="row 50%">
-                        <div class="6u 12u(mobile)"><input type="text" name="name" placeholder="Name" /></div>
-                        <div class="6u 12u(mobile)"><input type="email" name="email" placeholder="Email" /></div>
+                        <div class="6u 12u(mobile)"><input type="text" name="name" placeholder="Nombre" required></div>
+                        <div class="6u 12u(mobile)"><input type="email" name="email" placeholder="Correo" required></div>
                     </div>
                     <div class="row 50%">
-                        <div class="12u"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
+                        <div class="12u"><textarea name="message" placeholder="Mensaje" rows="6" required></textarea></div>
                     </div>
                     <div class="row">
                         <div class="12u">
                             <ul class="actions">
-                                <li><input type="submit" value="Send Message" /></li>
+                                <li><input type="submit" value="Enviar Mensaje" /></li>
                             </ul>
                         </div>
                     </div>
@@ -151,36 +150,42 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="footer">
+    <footer id="footer"></footer>
 
-        <!-- Icons -->
-        <ul class="actions">
-            <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-            <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-            <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
-            <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-            <li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
-            <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-        </ul>
 
-        <!-- Menu -->
-        <ul class="menu">
-            <li>&copy; Untitled</li>
-            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-        </ul>
+    @*<!-- Footer -->
+        <footer id="footer">
 
-    </footer>
+            <!-- Icons -->
+            <ul class="actions">
+                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+                <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+                <li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+            </ul>
 
-    <!-- Scripts -->
-    <script src="~/Content/TDashboard/assets/js/jquery.min.js"></script>
-    <script src="~/Content/TDashboard/assets/js/jquery.poptrox.min.js"></script>
-    <script src="~/Content/TDashboard/assets/js/jquery.scrolly.min.js"></script>
-    <script src="~/Content/TDashboard/assets/js/jquery.scrollex.min.js"></script>
-    <script src="~/Content/TDashboard/assets/js/skel.min.js"></script>
-    <script src="~/Content/TDashboard/assets/js/util.js"></script>
-    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-    <script src="~/Content/TDashboard/assets/js/main.js"></script>
+
+            <!-- Menu -->
+            <ul class="menu">
+                <li>&copy; Untitled</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+
+        </footer>
+        *@
+
+        <!-- Scripts -->
+        <script src="~/Content/TDashboard/assets/js/jquery.min.js"></script>
+        <script src="~/Content/TDashboard/assets/js/jquery.poptrox.min.js"></script>
+        <script src="~/Content/TDashboard/assets/js/jquery.scrolly.min.js"></script>
+        <script src="~/Content/TDashboard/assets/js/jquery.scrollex.min.js"></script>
+        <script src="~/Content/TDashboard/assets/js/skel.min.js"></script>
+        <script src="~/Content/TDashboard/assets/js/util.js"></script>
+        <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+        <script src="~/Content/TDashboard/assets/js/main.js"></script>
+
 
 </body>
 </html>

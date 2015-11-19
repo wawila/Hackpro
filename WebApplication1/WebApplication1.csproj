@@ -102,6 +102,7 @@
     <Content Include="Content\Login\images\logoUNITEC.png" />
     <Content Include="Content\Login\js\login.js" />
     <Content Include="Content\Login\login.html" />
+    <Content Include="Content\logoUNITEC.png" />
     <Content Include="Content\TDashboard\assets\css\font-awesome.min.css" />
     <Content Include="Content\TDashboard\assets\css\ie8.css" />
     <Content Include="Content\TDashboard\assets\css\ie9.css" />
@@ -143,6 +144,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\TFormulario\css\default.css" />
+    <Content Include="Content\TFormulario\css\font-awesome.min.css" />
+    <Content Include="Content\TFormulario\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\TFormulario\img\bg_infobox.gif" />
     <Content Include="Content\TFormulario\img\h1.png" />
     <Content Include="Content\TFormulario\img\overlay.png" />
@@ -164,6 +167,11 @@
     <Content Include="Content\TLogIn2\LoginRegistrationForm\index3.html" />
     <Content Include="Content\TLogin\css\style.css" />
     <Content Include="Content\TLogin\index.html" />
+    <Content Include="fonts\BebasNeue-webfont.svg" />
+    <Content Include="fonts\Dharma Type Font License.txt" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fontomas-webfont.svg" />
+    <Content Include="fonts\franchise-bold-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Models\BaseDate_Model.Context.tt">
@@ -196,6 +204,25 @@
     <Content Include="Models\BaseDate_Model.edmx.diagram">
       <DependentUpon>BaseDate_Model.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\TFormulario\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\TFormulario\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\TFormulario\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\TFormulario\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\TFormulario\fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\BebasNeue-webfont.eot" />
+    <Content Include="fonts\BebasNeue-webfont.ttf" />
+    <Content Include="fonts\BebasNeue-webfont.woff" />
+    <Content Include="fonts\fontomas-webfont.eot" />
+    <Content Include="fonts\fontomas-webfont.ttf" />
+    <Content Include="fonts\fontomas-webfont.woff" />
+    <Content Include="fonts\franchise-bold-webfont.eot" />
+    <Content Include="fonts\franchise-bold-webfont.ttf" />
+    <Content Include="fonts\franchise-bold-webfont.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -226,6 +253,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseDate_Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\EventModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\tbl_calificacion.cs">
       <DependentUpon>BaseDate_Model.tt</DependentUpon>
@@ -305,6 +333,9 @@
     <Content Include="Views\LogIn\LogIn - Copy.cshtml" />
     <Content Include="Views\LogIn\View.cshtml" />
     <Content Include="Views\LogIn\Register.cshtml" />
+    <Content Include="Views\Dashboard\EventForm1.cshtml" />
+    <Content Include="Views\Dashboard\EventForm2.cshtml" />
+    <Content Include="Views\Dashboard\EventForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
