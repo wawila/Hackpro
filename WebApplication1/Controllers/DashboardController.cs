@@ -9,9 +9,15 @@ namespace WebApplication1.Controllers
     public class DashboardController : Controller
     {
         // GET: Dashboard
-        public ActionResult Index()
+        public ActionResult Dashboard()
         {
             return View("Dashboard");
         }
+
+        public ActionResult EventForm()
+        {
+            return View("EventForm");
+        }
+
     }
 }

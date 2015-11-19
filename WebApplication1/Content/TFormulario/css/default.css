@@ -1,12 +1,17 @@
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
+@import url("font-awesome.min.css");
+
+
 */*Set's border, padding and margin to 0 for all values*/
 {
     padding: 0;
     margin: 0;
     border: 0;
+    font-family: FontAwesome;
 }
 body, html {
     color: #373C40;
-    font-family: Verdana,Arial, Helvetica, sans-serif;
+    font-family: FontAwesome;
     height: 100%;
     background-color: #f0f0f0;
     margin:10px;
@@ -22,14 +27,15 @@ p {
 a {
     color: #656565;
     text-decoration:none;
+    text-align: center;
 }
 a:hover{
-    color: #abda0f;
+    //color: #abda0f;
     text-decoration: none;
 }
 h1 {
     font-weight:200;
-    color: #888888;
+    color: #4A89DC;
     font-size:16pt;
     background: transparent url(../img/h1.png) no-repeat center left;
     padding-left:33px;
@@ -110,7 +116,7 @@ form.register .infobox{
 }
 form.register legend
 {
-    color: #abda0f;
+    color: #4A89DC;
     padding:2px;
     margin-left: 14px;
     font-weight:bold;
@@ -176,7 +182,7 @@ form.register input[type=password]
 }
 .button
 {
-    background: #abda0f url(../img/overlay.png) repeat-x;
+    background: #5D9CEC url(../img/overlay.png) repeat-x;
     padding: 8px 10px 8px;
     color: #fff;
     text-decoration: none;
@@ -189,7 +195,16 @@ form.register input[type=password]
     float:left;
     font-size:18px;
     margin:10px;
+    height: 10%;
+    width: 20%;
+   
 }
+
+.button:hover
+{
+    background-color: #4A89DC;
+}
+
 form.register input[type=text].year
 {
     border: 1px solid #E1E1E1;

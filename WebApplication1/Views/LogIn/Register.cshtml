@@ -63,7 +63,7 @@
                                     @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                                 </p>
                                 <p>
-                                    <!-- <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Confirmar Contraseña </label> -->             
+                                    <!-- <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Confirmar Contraseña </label> -->
                                     @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @type = "text", @required = "required", @placeholder = "Confirmar Contraseña" } })
                                     @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                                     <!---<input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO" /> -->
