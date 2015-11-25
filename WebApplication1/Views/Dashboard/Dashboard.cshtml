@@ -52,7 +52,7 @@
             </p>
             <footer>
                 <a href="@Url.Action("EventForm", "Dashboard")" id="introleft" class="button styleD">Crear un Hackathon</a>
-                <a href="#one" id="introright" class="button styleD">Ingresara tu Usuario</a>
+                <a href="#one" id="introright" class="button styleD">Lista de Usuarios</a>
                 <br />
                 <br />
                 <a href="#one" class="button style2a down">Down</a>
@@ -61,17 +61,13 @@
     </section>
 
     <!-- One -->
-    <section id="one" class="main style2 right dark fullscreen">
+    <section id="one" class="main style1 fullscreen">
         <div class="content box style2">
             <header>
-                <h2>What I Do</h2>
+                <p>Lista de Usuarios</p>
             </header>
-            <p>
-                Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-                Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
-                id varius justo euismod in. Curabitur egestas consectetur magna.
-            </p>
-        </div>
+                @Html.Raw(ViewBag.HtmlStr)
+            </div>
         <a href="#two" class="button style2 down anchored">Next</a>
     </section>
 

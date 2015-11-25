@@ -87,14 +87,14 @@
                                 </p>
                                 <p>
                                     <label class="keeplogin"> Jurado </label>
-                                    @Html.EditorFor(model => model.tbl_evento_cal_jurado, new { htmlAttributes = new { @class = "form-control", @type = "hidden", @value = "0" } })
-                                    @Html.EditorFor(model => model.tbl_evento_cal_jurado, new { htmlAttributes = new { @class = "form-control", @type = "checkbox", @value = "1" } })
+                                    @Html.EditorFor(model => model.tbl_evento_cal_jurado, new { htmlAttributes = new { @class = "form-control", @type = "hidden", @value = "false" } })
+                                    @Html.EditorFor(model => model.tbl_evento_cal_jurado, new { htmlAttributes = new { @class = "form-control", @type = "checkbox", @value = "true" } })
                                     @Html.ValidationMessageFor(model => model.tbl_evento_cal_jurado, "", new { @class = "text-danger" })
                                     
                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                     <label class="keeplogin"> Popular </label>
-                                    @Html.EditorFor(model => model.tbl_evento_cal_pueblo, new { htmlAttributes = new { @class = "form-control", @type = "hidden", @value = "0" } })
-                                    @Html.EditorFor(model => model.tbl_evento_cal_pueblo, new { htmlAttributes = new { @class = "form-control", @type = "checkbox", @value = "1" } })
+                                    @Html.EditorFor(model => model.tbl_evento_cal_pueblo, new { htmlAttributes = new { @class = "form-control", @type = "hidden", @value = "false" } })
+                                    @Html.EditorFor(model => model.tbl_evento_cal_pueblo, new { htmlAttributes = new { @class = "form-control", @type = "checkbox", @value = "true" } })
                                     @Html.ValidationMessageFor(model => model.tbl_evento_cal_pueblo, "", new { @class = "text-danger" })
                                 </p>
 
@@ -102,7 +102,7 @@
                                     <input type="submit" value="Crear Evento" />
                                 </p>
                                 <p class="change_link">
-                                    <a href="@Url.Action("Dashboard", "LogIn")" class=""> Regresar </a>
+                                    <a href="@Url.Action()" class=""> Regresar </a>
                                 </p>
                             </form>
                         </div>

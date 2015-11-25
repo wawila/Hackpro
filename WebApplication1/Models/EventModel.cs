@@ -29,7 +29,7 @@ namespace WebApplication1.Models
         [Required(ErrorMessage = "Presupuesto Requerido")]
         public decimal tbl_evento_presupuesto { get; set; }//
 
-        //[Required(ErrorMessage = "Ingresar   Correcto")]
+        [Required(ErrorMessage = "Ingresar   Correcto")]
         public string tbl_evento_url { get; set; }//
 
         [Required(ErrorMessage = "Jurado Requerido")]
