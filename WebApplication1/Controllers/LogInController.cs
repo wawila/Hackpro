@@ -41,11 +41,6 @@ namespace System.Windows.Forms
                 return View();
             }
 
-            public ActionResult ErrorLoging()
-            {
-                return View("ErrorLoging");
-            }
-
             [HttpGet]
             public ActionResult Register()
             {

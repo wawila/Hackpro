@@ -15,22 +15,19 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public ActionResult Dashboard()
         {
+            return View("Dashboard");
+        }
+
+        [HttpGet]
+        public void GetListasUsuarios()
+        {
             hackprodb_4Entities db = new hackprodb_4Entities();
             List<tbl_usuario> ListUsuario = db.tbl_usuario.ToList();
             var lista = "";
-            lista += "<table>";
-            lista += "<tr>";
-                lista += "<td> ID </td>";
-                lista += "<td> Correo </td>";
-                lista += "<td> Username </td>";
-                lista += "<td> Nombre </td>";
-                lista += "<td> Apellido </td>";
-                lista += "<td> Gnero </td>";
-                lista += "<td> Celular </td>";
-                lista += "<td> Ocupacion </td>";
-                lista += "</tr>";
-            foreach (tbl_usuario usu in ListUsuario){
-                
+
+            foreach (tbl_usuario usu in ListUsuario)
+            {
+
                 lista += "<tr>";
                 lista += "<td> " + usu.tbl_usuario_id + " </td>";
                 lista += "<td> " + usu.tbl_usuario_correo + " </td>";
@@ -41,11 +38,64 @@ namespace WebApplication1.Controllers
                 lista += "<td> " + usu.tbl_usuario_celular + " </td>";
                 lista += "<td> " + usu.tbl_usuario_ocupacion + " </td>";
                 lista += "</tr>";
-                
+
             }
-            lista += "</table>";
             ViewBag.HtmlStr = lista;
-            return View("Dashboard");
+        }
+
+        [HttpGet]
+        public void GetListasEventos()
+        {
+            hackprodb_4Entities edb = new hackprodb_4Entities();
+            List<tbl_evento> ListEventos = edb.tbl_evento.ToList();
+            var evento = "";
+
+            foreach (tbl_evento eve in ListEventos)
+            {
+                evento += "<tr>";
+                evento += "<td>" + eve.tbl_evento_id + "</td>";
+                evento += "<td>" + eve.tbl_evento_nombre + "</td>";
+                evento += "<td>" + eve.tbl_evento_desc + "</td>";
+                evento += "<td>" + eve.tbl_evento_lugar + "</td>";
+                evento += "<td>" + eve.tbl_evento_duracion + "</td>";
+                evento += "<td>" + eve.tbl_evento_fecha_inicio + "</td>";
+                evento += "<td>" + eve.tbl_evento_precio + "</td>";
+                evento += "<td>" + eve.tbl_evento_url + "</td>";
+                evento += "<td>";
+                if (eve.tbl_evento_cal_jurado && eve.tbl_evento_cal_pueblo)
+                {
+                    evento += " J - P";
+                }
+                else if (eve.tbl_evento_cal_jurado && !eve.tbl_evento_cal_pueblo)
+                {
+                    evento += "J";
+                }
+                else if (!eve.tbl_evento_cal_jurado && eve.tbl_evento_cal_pueblo)
+                {
+                    evento += "P";
+                }
+                else
+                {
+                    evento += "N/A";
+                }
+                evento += "</tr>";
+            }
+            evento += "</table>";
+            ViewBag.eventos = evento;
+        }
+
+        [HttpGet]
+        public ActionResult ListaUsuarios()
+        {
+            GetListasUsuarios();
+            return View("ListaUsuarios");
+        }
+
+        [HttpGet]
+        public ActionResult ListaEventos()
+        {
+            GetListasEventos();
+            return View("ListaEventos");
         }
 
         [HttpGet]
@@ -53,7 +103,6 @@ namespace WebApplication1.Controllers
         {
             return View("EventForm");
         }
-
         [HttpPost]
         public ActionResult EventForm(EventModel Evento)
         {

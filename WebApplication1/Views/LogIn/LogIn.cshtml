@@ -1,72 +1,92 @@
 ﻿@model WebApplication1.Models.LoginModel
 @{
+    ViewBag.Title = "LogIn";
     Layout = null;
-    ViewBag.Title = "#HackPro";
 }
+
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <title>#HackPro Log In</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-    <link href="~/Content/TLogIn2/LoginRegistrationForm/css/style.css" rel="stylesheet" />
-    <link href="~/Content/TLogIn2/LoginRegistrationForm/css/animate-custom.css" rel="stylesheet" />
-    <link href="~/Content/TLogIn2/LoginRegistrationForm/css/demo.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="../favicon.ico">
+    <title>HackPro Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+    <!-- CSS Libs -->
+    <link rel="stylesheet" type="text/css" href="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/bower_components/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/bower_components/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/bower_components/iCheck/skins/flat/_all.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/bower_components/DataTables/media/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/bower_components/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/vendor/css/dataTables.bootstrap.css">
+    <!-- CSS App -->
+    <link rel="stylesheet" type="text/css" href="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/css/style.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/css/themes.css">
 </head>
-<body>
+<body class="flat-blue login-page">
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="container">
-            <!-- Codrops top bar -->
-            <div class="codrops-top">
-                <span class="right">
-                    <a href=" http://www.unitec.edu">
-                        <strong>UNITEC</strong>
-                    </a>
-                </span>
-            </div>
-            <header>
-                <h1><span>#HackPro </span>Honduras</h1>
-            </header>
-            <section>
-                <div id="container_demo">
-                    <div id="wrapper">
-                        <div id="login" class="animate form">
-                            <form action="LogIn" method="post" autocomplete="on">
-                                <h1>Iniciar Sesion</h1>
-                                <p>
-                                    <label class="uname" data-icon="u"> Usuario/Correo </label>
-                                    @Html.EditorFor(model => model.User, new { htmlAttributes = new { @class = "form-control",@type ="text", @placeholder = "Correo" } })
+    <div class="container">
+        <div class="login-box">
+            <div>
+                <div class="login-form row">
+                    <div class="col-sm-12 text-center login-header">
+                        <i class="login-logo fa fa-connectdevelop fa-5x"></i>
+                        <h4 class="login-title">HackPro</h4>
+                        <h5 class="login-title">Login</h5>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="login-body">
+                            <div class="progress hidden" id="login-progress">
+                                <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                    Cargando...
+                                </div>
+                            </div>
+                            <form>
+                                <div class="control">
+                                    <span class="fa fa-at" aria-hidden="true"><strong> Correo Electronico</strong></span>
+                                    @Html.EditorFor(model => model.User, new { htmlAttributes = new { @class = "form-control", @type = "text", @placeholder = "HackPro@unitec.edu" } })
                                     @Html.ValidationMessageFor(model => model.User, "", new { @class = "text-danger" })
-                                </p>
-                                <p>
-                                    <label class="youpasswd" data-icon="p"> Contraseña </label>
-                                    @Html.EditorFor(model => model.Pass, new { htmlAttributes = new { @class = "form-control",@placeholder = "Contraseña", @type = "password" } })
+                                </div>
+                                <div class="control">
+                                    <span class="fa fa-shield" aria-hidden="true"><strong> Contraseña</strong></span>
+                                    @Html.EditorFor(model => model.Pass, new { htmlAttributes = new { @class = "form-control", @placeholder = "Contraseña", @type = "password" } })
                                     @Html.ValidationMessageFor(model => model.Pass, "", new { @class = "text-danger" })
                                     @Html.ValidationMessage("Password")
-                                </p>
-                                <p class="keeplogin">
-                                    <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
-                                    <label for="loginkeeping">Mantenerme Conectado:</label>
-                                </p>
-                                <p class="login button">
-                                    <input type="submit" value="Iniciar Sesion" />
-                                </p>
-                                <p class="change_link">
-                                    No eres miembro ?
-                                    <a href="@Url.Action("Register", "LogIn")" class="to_register"> Registrate Aqui! </a>
-                                </p>
+                                </div>
+                                <div class="login-button text-center">
+                                    <input type="submit" class="btn btn-primary" value="Iniciar Sesion">
+                                </div>
                             </form>
+                        </div>
+                        <div class="login-footer">
+                            <span class="text-right"><a href="@Url.Action("Register", "LogIn")" class="color-white">No Tienes Cuenta?</a></span>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
+    </div>
+    <!-- Javascript Libs -->
+    <script type="text/javascript" src="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/bower_components/chartjs/Chart.min.js"></script>
+    <script type="text/javascript" src="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+    <script type="text/javascript" src="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/bower_components/iCheck/icheck.min.js"></script>
+    <script type="text/javascript" src="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/bower_components/matchHeight/jquery.matchHeight-min.js"></script>
+    <script type="text/javascript" src="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/bower_components/DataTables/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/bower_components/select2/dist/js/select2.full.min.js"></script>
+
+    <script type="text/javascript" src="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/vendor/js/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" src="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/vendor/js/ace/ace.js"></script>
+    <script type="text/javascript" src="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/vendor/js/ace/mode-html.js"></script>
+    <script type="text/javascript" src="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/vendor/js/ace/theme-github.js"></script>
+    <!-- Javascript -->
+    <script type="text/javascript" src="~/Content/FlatAdmin/flat-admin-bootstrap-templates-master/js/app.js"></script>
     }
 </body>
 </html>

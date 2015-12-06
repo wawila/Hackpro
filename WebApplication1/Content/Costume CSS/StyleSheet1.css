@@ -1,0 +1,19 @@
+﻿table
+{
+    width : 100%;
+    height : 100%;
+    border-color : grey;
+    border-bottom-width : thin;
+}
+
+
+#bold
+{
+    font-weight: bold;
+}
+
+td
+{
+    font-family: Arial;
+    text-align: center;
+}
