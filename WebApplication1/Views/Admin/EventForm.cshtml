@@ -1,0 +1,116 @@
+﻿@model WebApplication1.Models.EventModel
+
+@{
+    ViewBag.Title = "Nuevo Evento";
+    Layout = null;
+}
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+
+    <link href="~/Content/TLogIn2/LoginRegistrationForm/css/style2.css" rel="stylesheet" />
+    <link href="~/Content/TLogIn2/LoginRegistrationForm/css/animate-custom.css" rel="stylesheet" />
+    <link href="~/Content/TLogIn2/LoginRegistrationForm/css/demo.css" rel="stylesheet" />
+
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="container">
+            <header>
+                <h1>#HackPro <span>Nuevo Evento</span></h1>
+            </header>
+            <section>
+                <div id="container_demo">
+                    <div id="wrapper">
+                        <div id="login">
+                            <form action="" autocomplete="on" method="post"> 
+                                <h1>Nuevo Evento</h1>
+                                <p>
+                                    <label for="" class="uname"> Nombre </label>
+                                    @Html.EditorFor(model => model.tbl_evento_nombre, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nombre Evento" } })
+                                    @Html.ValidationMessageFor(model => model.tbl_evento_nombre, "", new { @class = "text-danger" })
+                                </p>
+                                <p>
+                                    <label for="" class="uname"> Descripcion </label>
+                                    @Html.EditorFor(model => model.tbl_evento_desc, new { htmlAttributes = new { @class = "form-control", @placeholder = "Descripcion" } })
+                                    @Html.ValidationMessageFor(model => model.tbl_evento_desc, "", new { @class = "text-danger" })
+                                </p>
+                                <p>
+                                    <label for="" class="uname"> Lugar </label>
+                                    @Html.EditorFor(model => model.tbl_evento_lugar, new { htmlAttributes = new { @class = "form-control", @placeholder = "Lugar" } })
+                                    @Html.ValidationMessageFor(model => model.tbl_evento_lugar, "", new { @class = "text-danger" })
+                                </p>
+                                <p>
+                                    <label for="" class="uname"> Duracion </label>
+                                    @Html.EditorFor(model => model.tbl_evento_duracion, new { htmlAttributes = new { @class = "form-control",@placeholder = "Horas", @type = "number", @min = "0"} })
+                                    @Html.ValidationMessageFor(model => model.tbl_evento_duracion, "", new { @class = "text-danger" })
+                                </p>
+                                <p>
+                                    <label for="" class="uname"> Fecha Inicio </label>
+                                    @Html.EditorFor(model => model.tbl_evento_fecha_inicio, new { htmlAttributes = new { @class = "form-control",@placeholder = "Inicio", @type = "datetime-local"} })
+                                    @Html.ValidationMessageFor(model => model.tbl_evento_fecha_inicio, "", new { @class = "text-danger" })
+                                </p>
+                                <p>
+                                    <label for="" class="uname"> Fecha Final  </label>
+                                    @Html.EditorFor(model => model.tbl_evento_fecha_fin, new { htmlAttributes = new { @class = "form-control", @placeholder = "Inicio", @type = "datetime-local" } })
+                                    @Html.ValidationMessageFor(model => model.tbl_evento_fecha_fin, "", new { @class = "text-danger" })
+                                </p>
+                                <p>
+                                    <label for="" class="uname"> URL </label>
+                                    @Html.EditorFor(model => model.tbl_evento_url, new { htmlAttributes = new { @class = "form-control", @placeholder = "URL", @type = "url" } })
+                                    @Html.ValidationMessageFor(model => model.tbl_evento_url, "", new { @class = "text-danger" })
+                                </p>
+                                <p>
+                                    <label for="password" class="uname">Precio $</label>
+                                    @Html.EditorFor(model => model.tbl_evento_precio, new { htmlAttributes = new { @class = "form-control", @placeholder = "$ 00.00", @type = "number", @min = "0", @step = "0.1"} })
+                                    @Html.ValidationMessageFor(model => model.tbl_evento_precio, "", new { @class = "text-danger" })
+                                </p>
+                                <p>
+                                    <label for="" class="uname"> Presupuesto $ </label>
+                                    @Html.EditorFor(model => model.tbl_evento_presupuesto, new { htmlAttributes = new { @class = "form-control", @placeholder = "$ 00.00", @type = "number", @min = "0", @step = "0.1" } })
+                                    @Html.ValidationMessageFor(model => model.tbl_evento_presupuesto, "", new { @class = "text-danger" })
+                                </p>
+                                <p>
+                                    <label for="" class="uname"> Calificacion </label>
+                                </p>
+                                <p>
+                                    <label class="keeplogin"> Jurado </label>
+                                    @Html.EditorFor(model => model.tbl_evento_cal_jurado, new { htmlAttributes = new { @class = "form-control", @type = "hidden", @value = "false" } })
+                                    @Html.EditorFor(model => model.tbl_evento_cal_jurado, new { htmlAttributes = new { @class = "form-control", @type = "checkbox", @value = "true" } })
+                                    @Html.ValidationMessageFor(model => model.tbl_evento_cal_jurado, "", new { @class = "text-danger" })
+                                    
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <label class="keeplogin"> Popular </label>
+                                    @Html.EditorFor(model => model.tbl_evento_cal_pueblo, new { htmlAttributes = new { @class = "form-control", @type = "hidden", @value = "false" } })
+                                    @Html.EditorFor(model => model.tbl_evento_cal_pueblo, new { htmlAttributes = new { @class = "form-control", @type = "checkbox", @value = "true" } })
+                                    @Html.ValidationMessageFor(model => model.tbl_evento_cal_pueblo, "", new { @class = "text-danger" })
+                                </p>
+
+                                <p class="signin button">
+                                    <input type="submit" value="Crear Evento" />
+                                </p>
+                                <p class="change_link">
+                                    <a href="@Url.Action()" class=""> Regresar </a>
+                                </p>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    }
+</body>
+</html>

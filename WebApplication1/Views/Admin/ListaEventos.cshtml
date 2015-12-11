@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "ListaEventos";
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<link href="~/Content/Costume CSS/StyleSheet1.css" rel="stylesheet" />
+<html>
+<body>
+    <table border="1">
+        <tr>
+            <td id="bold"> ID </td>
+            <td id="bold"> Nombre </td>
+            <td id="bold"> Descripcion </td>
+            <td id="bold"> Lugar </td>
+            <td id="bold"> Duracion </td>
+            <td id="bold"> Inicio </td>
+            <td id="bold"> Precio </td>
+            <td id="bold"> URL </td>
+            <td id="bold"> Calificacion</td>
+        </tr>
+        @Html.Raw(ViewBag.eventos)
+    </table>
+</body>
+</html>
+

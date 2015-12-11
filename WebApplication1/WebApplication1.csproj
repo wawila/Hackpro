@@ -1399,6 +1399,7 @@
   <ItemGroup>
     <Compile Include="Actions\Sesion.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\LogInController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1502,6 +1503,13 @@
     <Content Include="Views\Dashboard\EventForm.cshtml" />
     <Content Include="Views\Dashboard\ListaEventos.cshtml" />
     <Content Include="Views\Dashboard\ListaUsuarios.cshtml" />
+    <Content Include="Views\Usuario\Usuario.cshtml" />
+    <Content Include="Views\Usuario\Listas.cshtml" />
+    <Content Include="Views\Admin\Dashboard.cshtml" />
+    <Content Include="Views\Admin\EventForm.cshtml" />
+    <Content Include="Views\Admin\ListaEventos.cshtml" />
+    <Content Include="Views\Admin\ListaUsuarios.cshtml" />
+    <Content Include="Views\Admin\Admin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

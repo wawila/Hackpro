@@ -31,7 +31,7 @@ namespace System.Windows.Forms
                     if (login.Count() == 1)
                     {
                         //Session["User"] = "Jose4";
-                        return RedirectToAction("Dashboard", "Dashboard");
+                        return RedirectToAction("Admin", "Admin");
                     }
                     else
                     {
