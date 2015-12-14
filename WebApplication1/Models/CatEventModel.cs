@@ -7,10 +7,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication1.Models
 {
-    public class CatEvent
+    public class CatEventModel
     {
-        public int cat_evento_id { get; set; }
+        [Required(ErrorMessage = "Descripcion De Evento Requerido")]
         public string cat_evento_desc { get; set; }
-        public bool cat_evento_activo { get; set; }
     }
 }

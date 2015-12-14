@@ -505,6 +505,10 @@ a:hover {
   border-radius: 3px;
   box-shadow: none; }
 
+.form-controltwo {
+  border-radius: 3px;
+  box-shadow: none; }
+
 .bs-example-modal .modal {
   z-index: 100;
   position: relative;

@@ -1,9 +1,7 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "#HackPro";
     Layout = null;
 }
-
 <!DOCTYPE HTML>
 <!--
     Big Picture by HTML5 UP
@@ -21,26 +19,18 @@
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 </head>
 <body>
-
     <!-- Header -->
     <header id="header">
-
-        <!-- Logo -->
-        <h1 id="logo">#HackPro Honduras</h1>
-
         <!-- Nav -->
         <nav id="nav">
             <ul>
-                <li><a href="#intro">Intro</a></li>
-                <li><a href="#one">What I Do</a></li>
-                <li><a href="#two">Who I Am</a></li>
-                <li><a href="#work">My Work</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#intro">#HackPro</a></li>
+                <li><a href="#one">¿Que es un Hackathon?</a></li>
+                <li><a href="#two">Tipos de Hackathons</a></li>
+                <li><a href="#work">Patrocinadores</a></li>
             </ul>
         </nav>
-
     </header>
-
     <!-- Intro -->
     <section id="intro" class="main style1 fullscreen">
         <div class="content container 75%">
@@ -48,54 +38,57 @@
                 <h2>#HackPro</h2>
             </header>
             <p>
-                Bienvenidos a <strong>#HackPro</strong> Honduras!<br /> Powered by <strong>UNITEC</strong>
+                Bienvenidos a <strong>#HackPro</strong> Honduras!<br> Powered by <strong>UNITEC</strong>
             </p>
             <footer>
-                <a href="@Url.Action("EventForm", "Dashboard")" id="introleft" class="button styleD">Crear un Hackathon</a>
-                <a href="#one" id="introright" class="button styleD">Lista de Usuarios</a>
-                <br />
-                <br />
+                <a href="@Url.Action("EventForm", "Admin")" id="introleft" class="button styleD">Crear un Hackathon</a>
+                <br>
+                <br>
                 <a href="#one" class="button style2a down">Down</a>
             </footer>
         </div>
     </section>
-
     <!-- One -->
-    <section id="one" class="main style1 fullscreen">
+    <section id="one" class="main style2 dark right fullscreen">
         <div class="content box style2">
             <header>
-                <p>Lista de Usuarios</p>
+                <h2>¿Que es un Hackathon?</h2>
             </header>
             <p>
-                <iframe src="ListaUsuarios"> </iframe>
+                Un Hackathon es un evento en el que programadores, diseñadores entre otros se reunen
+                para trabajar intensivamente y presentar un prototipo de un proyecto delante de un jurado;
+                normalmente duran de 12 horas a un fin de semana hasta 1 semana completa.
             </p>
-            </div>
+        </div>
         <a href="#two" class="button style2 down anchored">Next</a>
     </section>
-
     <!-- Two -->
     <section id="two" class="main style2 left dark fullscreen">
         <div class="content box style2">
             <header>
-                <h2>Lista de Eventos</h2>
+                <h2>Tipos de Hackathons</h2>
             </header>
             <p>
-                <iframe src="ListaEventos"> </iframe>
+                <strong>Civiles: </strong>en el que se presenta un problema en la sociedad en el que se
+                busca una solucion a traves de programa.
+                <br>
+                <strong>Video Juegos: </strong>en el que los participantes tiene un tiempo designado para
+                presentar un prototipo de un juego.
+                <br>
+                <strong>Libre: </strong>en este tipo de eventos los paricipantes tienen libertad de escoger
+                su tema para su proyecto.
             </p>
         </div>
         <a href="#work" class="button style2 down anchored">Next</a>
     </section>
-
     <!-- Work -->
     <section id="work" class="main style3 primary">
         <div class="content container">
             <header>
-                <h2>Patrocinadores</h2>
+                <h2 style="color:white">Patrocinadores</h2>
                 <p>
-                    [Mensaje]
                 </p>
             </header>
-
             <!-- Lightbox Gallery  -->
             <div class="container 75% gallery">
                 <div class="row 0% images">
@@ -111,20 +104,20 @@
                     <div class="6u 12u(mobile)"><a href="~/Content/TDashboard/images/fulls/06.jpg" class="image fit from-right"><img src="~/Content/TDashboard/images/thumbs/06.jpg" title="Bent IX" alt="" /></a></div>
                 </div>
             </div>
-
         </div>
     </section>
-
-    <!-- Contact -->
+    <!-- Contact
     <section id="contact" class="main style3 secondary">
         <div class="content container">
             <header>
                 <h2>Contactanos</h2>
-                <p>[Mensaje]</p>
+                <p>
+
+                </p>
             </header>
             <div class="box container 75%">
 
-                <!-- Contact Form -->
+                <!-- Contact Form
                 <form method="post" action="#">
                     <div class="row 50%">
                         <div class="6u 12u(mobile)"><input type="text" name="name" placeholder="Nombre" required></div>
@@ -147,8 +140,7 @@
     </section>
 
     <footer id="footer"></footer>
-
-
+        -->
     @*<!-- Footer -->
         <footer id="footer">
 
@@ -170,18 +162,16 @@
             </ul>
 
         </footer>
-        *@
-
-        <!-- Scripts -->
-        <script src="~/Content/TDashboard/assets/js/jquery.min.js"></script>
-        <script src="~/Content/TDashboard/assets/js/jquery.poptrox.min.js"></script>
-        <script src="~/Content/TDashboard/assets/js/jquery.scrolly.min.js"></script>
-        <script src="~/Content/TDashboard/assets/js/jquery.scrollex.min.js"></script>
-        <script src="~/Content/TDashboard/assets/js/skel.min.js"></script>
-        <script src="~/Content/TDashboard/assets/js/util.js"></script>
-        <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-        <script src="~/Content/TDashboard/assets/js/main.js"></script>
-
+    *@
+    <!-- Scripts -->
+    <script src="~/Content/TDashboard/assets/js/jquery.min.js"></script>
+    <script src="~/Content/TDashboard/assets/js/jquery.poptrox.min.js"></script>
+    <script src="~/Content/TDashboard/assets/js/jquery.scrolly.min.js"></script>
+    <script src="~/Content/TDashboard/assets/js/jquery.scrollex.min.js"></script>
+    <script src="~/Content/TDashboard/assets/js/skel.min.js"></script>
+    <script src="~/Content/TDashboard/assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="~/Content/TDashboard/assets/js/main.js"></script>
 
 </body>
 </html>

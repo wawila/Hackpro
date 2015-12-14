@@ -168,6 +168,6 @@ C:\Users\Jose34mp\Documents\Proyecto\Hackpro\WebApplication1\bin\System.Web.Webp
 C:\Users\Jose34mp\Documents\Proyecto\Hackpro\WebApplication1\bin\System.Web.Webpages.Razor.xml
 C:\Users\Jose34mp\Documents\Proyecto\Hackpro\WebApplication1\bin\System.Web.Helpers.xml
 C:\Users\Jose34mp\Documents\Proyecto\Hackpro\WebApplication1\bin\System.Web.Mvc.xml
-C:\Users\Jose34mp\Documents\Proyecto\Hackpro\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
 C:\Users\Jose34mp\Documents\Proyecto\Hackpro\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\Jose34mp\Documents\Proyecto\Hackpro\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\Jose34mp\Documents\Proyecto\Hackpro\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache
