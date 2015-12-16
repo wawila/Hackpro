@@ -170,4 +170,3 @@ C:\Users\Jose34mp\Documents\Proyecto\Hackpro\WebApplication1\bin\System.Web.Help
 C:\Users\Jose34mp\Documents\Proyecto\Hackpro\WebApplication1\bin\System.Web.Mvc.xml
 C:\Users\Jose34mp\Documents\Proyecto\Hackpro\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\Jose34mp\Documents\Proyecto\Hackpro\WebApplication1\obj\Debug\WebApplication1.pdb
-C:\Users\Jose34mp\Documents\Proyecto\Hackpro\WebApplication1\obj\Debug\WebApplication1.csprojResolveAssemblyReference.cache

@@ -1,6 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "ListaCategoria";
+    Layout = null;
 }
 <!DOCTYPE html>
 <html>
@@ -49,7 +50,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                           
+                                           @Html.Raw(ViewBag.categoria)
                                         </tbody>
                                     </table>
                                 </div>

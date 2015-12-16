@@ -14,22 +14,32 @@ namespace WebApplication1.Controllers
         {
             return View();
         }*/
-
+        [HttpGet]
         public ActionResult Admin(LoginModel lm)
         {
-            System.Diagnostics.Debug.WriteLine("Admin(lm)");
-
-            if (lm == null)
+            //System.Diagnostics.Debug.WriteLine("Usuario");
+            if (Session["UserC"] == null)
             {
-                System.Diagnostics.Debug.WriteLine("No hay lm");
+                return RedirectToAction("LogIn", "LogIn");
             }
-            else
-                System.Diagnostics.Debug.WriteLine("lm: " + lm + lm.User);
 
-            var email = "Email: ";
-            email += lm.User;
-
-            ViewBag.correo = email;
+            hackprodb_4Entities db = new hackprodb_4Entities();
+            //System.Diagnostics.Debug.WriteLine(Session["UserID"].ToString());
+            List<tbl_usuario> ListUsuario = db.tbl_usuario.ToList();
+            var UserName = "";
+            var Name = "";
+            foreach (tbl_usuario usu in ListUsuario)
+            {
+                if (usu.tbl_usuario_correo.Equals(Session["UserC"].ToString()))
+                {
+                    Name = usu.tbl_usuario_p_nombre + " " + usu.tbl_usuario_p_apellido;
+                    UserName = usu.tbl_usuario_username;
+                }
+            }
+            var Email = Session["UserC"].ToString();
+            ViewBag.correo = Email;
+            ViewBag.user = UserName;
+            ViewBag.name = Name;
             return View("Admin");
         }
 
@@ -45,6 +55,26 @@ namespace WebApplication1.Controllers
         {
             GetListasEventos();
             return View("ListaEventos");
+        }
+
+        [HttpGet]
+        public ActionResult ListaCategoria()
+        {
+            GetListasCategoria();
+            return View("ListaCategoria");
+        }
+
+        [HttpGet]
+        public ActionResult ListaEquipos()
+        {
+            GetListasEquipos();
+            return View("ListaEquipos");
+        }
+        [HttpGet]
+        public ActionResult ListaProyectos()
+        {
+            GetListasProyectos();
+            return View("ListaProyectos");
         }
 
         [HttpGet]
@@ -121,6 +151,70 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet]
+        public void GetListasEquipos()
+        {
+            hackprodb_4Entities tdb = new hackprodb_4Entities();
+            List<tbl_equipo> ListTeam = tdb.tbl_equipo.ToList();
+            var lista = "";
+
+            foreach (tbl_equipo usu in ListTeam)
+            {
+
+                lista += "<tr>";
+                lista += "<td> " + usu.tbl_equipo_id + " </td>";
+                lista += "<td> " + usu.tbl_equipo_nombre + " </td>";
+                lista += "<td> " + usu.tbl_equipo_fecha_creacion + " </td>";
+                lista += "<td> " + usu.tbl_equipo_usuario_admin + " </td>";     
+                lista += "</tr>";
+
+            }
+            ViewBag.equipo = lista;
+        }
+        [HttpGet]
+        public void GetListasProyectos()
+        {
+            hackprodb_4Entities pdb = new hackprodb_4Entities();
+            List<tbl_proyecto> ListProyect = pdb.tbl_proyecto.ToList();
+            var lista = "";
+
+            foreach (tbl_proyecto usu in ListProyect)
+            {
+
+                lista += "<tr>";
+                lista += "<td> " + usu.tbl_proyecto_id + " </td>";
+                lista += "<td> " + usu.tbl_proyecto_nombre + " </td>";
+                lista += "<td> " + usu.tbl_evento_id + " </td>";
+                lista += "<td> " + usu.tbl_equipo_id + " </td>";
+                lista += "<td> " + usu.tbl_proyecto_url + " </td>";
+                lista += "<td> " + usu.tbl_proyecto_git + " </td>";
+                lista += "<td> " + usu.tbl_proyecto_estatus + " </td>";
+               
+                lista += "</tr>";
+
+            }
+            ViewBag.proyect = lista;
+        }
+        [HttpGet]
+        public void GetListasCategoria()
+        {
+            hackprodb_4Entities cdb = new hackprodb_4Entities();
+            List<tbl_cat_evento> ListCat = cdb.tbl_cat_evento.ToList();
+            var lista = "";
+
+            foreach (tbl_cat_evento usu in ListCat)
+            {
+
+                lista += "<tr>";
+                lista += "<td> " + usu.tbl_cat_evento_id + " </td>";
+                lista += "<td> " + usu.tbl_cat_evento_desc + " </td>";
+                System.Diagnostics.Debug.WriteLine(usu.tbl_cat_evento_id);
+                System.Diagnostics.Debug.WriteLine(usu.tbl_cat_evento_desc);
+                lista += "</tr>";
+            }
+            ViewBag.categoria = lista;
+        }
+
+        [HttpGet]
         public ActionResult NewEvents()
         {
             return View("NewEvents");
@@ -129,13 +223,25 @@ namespace WebApplication1.Controllers
         public ActionResult NewEvents(EventModel Evento)
         {
             var errors = ModelState.Values.SelectMany(v => v.Errors);
-
+            if (Session["UserC"] == null)
+            {
+                return RedirectToAction("LogIn", "LogIn");
+            }
             if (ModelState.IsValid)
             {
                 System.Diagnostics.Debug.WriteLine("Este Evento es Valido");
                 hackprodb_4Entities db = new hackprodb_4Entities();
                 DateTime Fecha = DateTime.Now;
                 var check = db.tbl_evento.Where(p => p.tbl_evento_nombre.Equals(Evento.tbl_evento_nombre));
+                List<tbl_usuario> ListUsuario = db.tbl_usuario.ToList();
+                int ID = 0;
+                foreach (tbl_usuario usu in ListUsuario)
+                {
+                    if (usu.tbl_usuario_correo.Equals(Session["UserC"].ToString()))
+                    {
+                        ID = usu.tbl_usuario_id; 
+                    }
+                }
                 if (check.Any() == false)
                 {
                     tbl_evento REvento = new tbl_evento();
@@ -153,7 +259,7 @@ namespace WebApplication1.Controllers
                     REvento.tbl_evento_cal_pueblo = Evento.tbl_evento_cal_pueblo;
                     REvento.tbl_evento_precio = Evento.tbl_evento_precio;
                     REvento.tbl_evento_presupuesto = Evento.tbl_evento_presupuesto;
-                    REvento.tbl_usuario_id = 2;//Pendiente de Configurar
+                    REvento.tbl_usuario_id = ID;
                     REvento.tbl_cat_evento_id = Evento.tbl_cat_evento_id;
                     db.tbl_evento.Add(REvento);
                     db.SaveChanges();
@@ -176,18 +282,31 @@ namespace WebApplication1.Controllers
         public ActionResult NewTeam(TeamModel team)
         {
             var errors = ModelState.Values.SelectMany(v => v.Errors);
+            if (Session["UserC"] == null)
+            {
+                return RedirectToAction("LogIn", "LogIn");
+            }
             if (ModelState.IsValid)
             {
                 System.Diagnostics.Debug.WriteLine("Este Equipo es Valido");
                 hackprodb_4Entities db = new hackprodb_4Entities();
                 DateTime Fecha = DateTime.Now;
                 var check = db.tbl_equipo.Where(p => p.tbl_equipo_nombre.Equals(team.equipo_nombre));
+                List<tbl_usuario> ListUsuario = db.tbl_usuario.ToList();
+                int ID = 0;
+                foreach (tbl_usuario usu in ListUsuario)
+                {
+                    if (usu.tbl_usuario_correo.Equals(Session["UserC"].ToString()))
+                    {
+                        ID = usu.tbl_usuario_id;
+                    }
+                }
                 if (check.Any() == false)
                 {
                     tbl_equipo Wequipo = new tbl_equipo();
                     Wequipo.tbl_equipo_nombre = team.equipo_nombre;
                     Wequipo.tbl_equipo_fecha_creacion = Fecha;
-                    Wequipo.tbl_equipo_usuario_admin = 1;//pendiente
+                    Wequipo.tbl_equipo_usuario_admin = ID;
                     Wequipo.tbl_equipo_activo = true;
                     db.tbl_equipo.Add(Wequipo);
                     db.SaveChanges();
@@ -211,6 +330,10 @@ namespace WebApplication1.Controllers
         public ActionResult NewProyect(ProyectModel pro)
         {
             var errors = ModelState.Values.SelectMany(v => v.Errors);
+            if (Session["UserC"] == null)
+            {
+                return RedirectToAction("LogIn", "LogIn");
+            }
             if (ModelState.IsValid)
             {
                 System.Diagnostics.Debug.WriteLine("Este Evento es Valido");
@@ -249,6 +372,10 @@ namespace WebApplication1.Controllers
         public ActionResult CatEvent(CatEventModel cat)
         {
             var errors = ModelState.Values.SelectMany(v => v.Errors);
+            if (Session["UserC"] == null)
+            {
+                return RedirectToAction("LogIn", "LogIn");
+            }
             if (ModelState.IsValid)
             {
                 System.Diagnostics.Debug.WriteLine("Este Evento es Valido");

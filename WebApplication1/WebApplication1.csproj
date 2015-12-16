@@ -1516,6 +1516,10 @@
     <Content Include="Views\Admin\NewTeam.cshtml" />
     <Content Include="Views\Admin\Jury.cshtml" />
     <Content Include="Views\Admin\ListaEquipos.cshtml" />
+    <Content Include="Views\Admin\EditEvent.cshtml" />
+    <Content Include="Views\Admin\EditUser.cshtml" />
+    <Content Include="Views\Admin\EditTeam.cshtml" />
+    <Content Include="Views\Admin\EditProyect.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

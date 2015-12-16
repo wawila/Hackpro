@@ -1,13 +1,12 @@
-﻿@model WebApplication1.Models.TeamModel
+﻿@model WebApplication1.Models.ProyectModel
 @{
-    ViewBag.Title = "NewTeam";
-    Layout = null;
+    ViewBag.Title = "EditProyect";
 }
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Crear Equipo</title>
+    <title>Crear Proyecto</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
@@ -36,8 +35,8 @@
                 <div class="container-fluid">
                     <div class="side-body">
                         <div class="page-title">
-                            <span class="title">Crear Tu Equipo</span>
-                            <div class="description">Unete a tus amigos o a otras personas y crea un equipo para disfrutar de la diversion.</div>
+                            <span class="title">Nuevo Proyecto</span>
+                            <div class="description">Dale un nombre a tu proyecto, elige su categoria y que empiece la diversion.</div>
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
@@ -50,10 +49,35 @@
                                     <div class="card-body">
                                         <form>
                                             <div class="form-group">
-                                                <label for="Datos">Nombre del Equipo</label>
-                                                @Html.EditorFor(model => model.equipo_nombre, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nombre De Equipo" } })
-                                                @Html.ValidationMessageFor(model => model.equipo_nombre, "", new { @class = "text-danger" })
+                                                <label for="Datos">Nombre del Proyecto</label>
+                                                @Html.EditorFor(model => model.proyecto_nombre, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nombre Proyecto" } })
+                                                @Html.ValidationMessageFor(model => model.proyecto_nombre, "", new { @class = "text-danger" })
 
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Datos">ID de Equipo</label>
+                                                @Html.EditorFor(model => model.equipo_id, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "0", @placeholder = "Equipo" } })
+                                                @Html.ValidationMessageFor(model => model.equipo_id, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Datos">ID de Evento</label>
+                                                @Html.EditorFor(model => model.evento_id, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "0", @placeholder = "Evento" } })
+                                                @Html.ValidationMessageFor(model => model.evento_id, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Datos">Url</label>
+                                                @Html.EditorFor(model => model.proyecto_url, new { htmlAttributes = new { @class = "form-control", @placeholder = "URL", @type = "url" } })
+                                                @Html.ValidationMessageFor(model => model.proyecto_url, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Datos">Repositorio</label>
+                                                @Html.EditorFor(model => model.proyecto_git, new { htmlAttributes = new { @class = "form-control", @placeholder = "Git", @type = "url" } })
+                                                @Html.ValidationMessageFor(model => model.proyecto_git, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Datos">Estado del Proyecto</label>
+                                                @Html.EditorFor(model => model.proyecto_estatus, new { htmlAttributes = new { @class = "form-control", @placeholder = "Porcentaje", @type = "number", @min = "0" } })
+                                                @Html.ValidationMessageFor(model => model.proyecto_estatus, "", new { @class = "text-danger" })
                                             </div>
                                             <button type="submit" class="btn btn-default">Crear</button>
                                         </form>
@@ -85,3 +109,5 @@
     }
 </body>
 </html>
+
+

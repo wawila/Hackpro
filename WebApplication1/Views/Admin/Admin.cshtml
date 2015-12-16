@@ -45,18 +45,18 @@
                             <i class="fa fa-times icon"></i>
                         </button>
                         <li class="dropdown profile">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> AQUI VA EL NOMBRE!!! <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> @Html.Raw(ViewBag.user) <span class="caret"></span></a>
                             <ul class="dropdown-menu animated fadeInDown">
                                 <li class="profile-img">
-                                    <img src="..../Content/FlatAdmin/img/profile/picjumbo.com_HNCK4153_resize.jpg" class="profile-img">
+                                    <img src="~/Content/FlatAdmin/flat-admin/img/profile/picjumbo.com_HNCK4153_resize.jpg" class="profile-img">
                                 </li>
                                 <li>
                                     <div class="profile-info">
-                                        <h4 class="username">Aqui Va el Nombre</h4>
-                                        <p>Aqui Va el Correo</p>
+                                        <h4 class="username">@Html.Raw(ViewBag.Name)</h4>
+                                        <p>@Html.Raw(ViewBag.correo)</p>
                                         <div class="btn-group margin-bottom-2x" role="group">
                                             <button type="button" class="btn btn-default"><i class="fa fa-user"></i> Perfil</button>
-                                            <button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> Desconectarse</button>
+                                            <button type="button" class="btn btn-default"><a href="@Url.Action("LogIn", "LogIn")"class="fa fa-sign-out"> Desconectarse </a> </button>
                                         </div>
                                     </div>
                                 </li>
@@ -85,7 +85,7 @@
                             </li>
                             <li class="panel panel-default dropdown">
                                 <a data-toggle="collapse" href="#dropdown-element">
-                                    <span class="icon fa fa-desktop"></span><span class="title">Usuarios</span>
+                                    <span class="fa fa-users"></span><span class="title">Usuarios</span>
                                 </a>
                                 <!-- Dropdown level 1 -->
                                 <div id="dropdown-element" class="panel-collapse collapse">
@@ -99,10 +99,67 @@
                                 </div>
                             </li>
                             <li class="panel panel-default dropdown">
-                                <a data-toggle="collapse" href="#dropdown-table">
-                                    <span class="icon fa fa-table"></span><span class="title">Eventos</span>
+                                <a data-toggle="collapse" href="#dropdown-cat">
+                                    <span class="fa fa-list-ul"></span><span class="title">Categoria</span>
                                 </a>
-                                <!-- Dropdown level 1 -->
+                                <!-- Dropdown level 2 -->
+                                <div id="dropdown-cat" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul class="nav navbar-nav">
+                                            <li>
+                                                <a href="ListaCategoria" target="ventana">Lista De Categorias</a>
+                                            </li>
+                                            <li>
+                                                <a href="CatEvent" target="ventana"> Crear Categoria </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="panel panel-default dropdown">
+                                <a data-toggle="collapse" href="#dropdown-equipo">
+                                    <span class="fa fa-sitemap"></span><span class="title">Equipos</span>
+                                </a>
+                                <!-- Dropdown level 3 -->
+                                <div id="dropdown-equipo" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul class="nav navbar-nav">
+                                            <li>
+                                                <a href="NewTeam" target="ventana"> Crear Equipo </a>
+                                            </li>
+                                            <li>
+                                                <a href="ListaEquipos" target="ventana">Lista de Equipos</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="panel panel-default dropdown">
+                                <a data-toggle="collapse" href="#dropdown-proyect">
+                                    <span class="fa fa-code"></span><span class="title">Proyecto</span>
+                                </a>
+                                
+                                <!-- Dropdown level 4 -->
+                                <div id="dropdown-proyect" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul class="nav navbar-nav">
+                                            <li>
+                                                <a href="NewProyect" target="ventana"> Crear Proyecto </a>
+                                            </li>
+                                            <li>
+                                                <a href="ListaProyectos" target="ventana">Lista de Proyectos</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="panel panel-default dropdown">
+                                <a data-toggle="collapse" href="#dropdown-table">
+                                    <span class="fa fa-calendar"></span><span class="title">Eventos</span>
+                                </a>
+                                
+                                <!-- Dropdown level 5 -->
                                 <div id="dropdown-table" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
@@ -111,24 +168,6 @@
                                             </li>
                                             <li>
                                                 <a href="ListaEventos" target="ventana">Lista de Eventos</a>
-                                            </li>
-                                            <li>
-                                                <a href="NewTeam" target="ventana"> Crear Equipo </a>
-                                            </li>
-                                            <li>
-                                                <a href="ListaEquipos" target="ventana">Lista de Equipos</a>
-                                            </li>
-                                            <li>
-                                                <a href="NewProyect" target="ventana"> Crear Proyecto </a>
-                                            </li>
-                                            <li>
-                                                <a href="ListaProyectos" target="ventana">Lista de Proyectos</a>
-                                            </li>
-                                            <li>
-                                                <a href="CatEvent" target="ventana"> Crear Categoria </a>
-                                            </li>
-                                            <li>
-                                                <a href="ListaCategoria" target="ventana">Lista de Categorias</a>
                                             </li>
                                         </ul>
                                     </div>

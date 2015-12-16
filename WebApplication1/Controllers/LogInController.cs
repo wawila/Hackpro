@@ -25,12 +25,12 @@ namespace System.Windows.Forms
                 if (ModelState.IsValid)
                 {
                     hackprodb_4Entities db = new hackprodb_4Entities();
-
+                    Session["UserC"] = null;
                     // System.ArgumentException Linea de Abajo
                     var login = db.tbl_usuario.Where(p => p.tbl_usuario_correo.Equals(log.User) && p.tbl_usuario_password.Equals(log.Pass));
                     if (login.Count() == 1)
                     {
-                        //Session["User"] = "Jose4";
+                        Session["UserC"] = log.User;  
                         return RedirectToAction("Admin", "Admin");
                     }
                     else
