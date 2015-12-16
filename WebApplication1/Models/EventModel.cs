@@ -26,6 +26,9 @@ namespace WebApplication1.Models
         [Required(ErrorMessage = "Fecha de Inicio Requerido")]
         public DateTime tbl_evento_fecha_fin { get; set; }//
 
+        [Required(ErrorMessage = "Categoria Requerida")]
+        public int tbl_cat_evento_id { get; set; }
+
         [Required(ErrorMessage = "Presupuesto Requerido")]
         public decimal tbl_evento_presupuesto { get; set; }//
 

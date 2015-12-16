@@ -1422,6 +1422,7 @@
     </Compile>
     <Compile Include="Models\CatEventModel.cs" />
     <Compile Include="Models\EventModel.cs" />
+    <Compile Include="Models\JuryModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\ProyectModel.cs" />
     <Compile Include="Models\tbl_calificacion.cs">
@@ -1466,6 +1467,7 @@
     <Compile Include="Models\tbl_usuario.cs">
       <DependentUpon>BaseDate_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TeamModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1511,6 +1513,9 @@
     <Content Include="Views\Admin\NewProyect.cshtml" />
     <Content Include="Views\Admin\ListaProyectos.cshtml" />
     <Content Include="Views\Admin\ListaCategoria.cshtml" />
+    <Content Include="Views\Admin\NewTeam.cshtml" />
+    <Content Include="Views\Admin\Jury.cshtml" />
+    <Content Include="Views\Admin\ListaEquipos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
